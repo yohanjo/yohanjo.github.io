@@ -1,0 +1,229 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+
+		<title>Yohan Jo's Homepage</title>
+		<link rel="shortcut icon" href="images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<!--[if !IE]>-->
+        <link media="only screen and (max-width: 500px)" href="iphone.css" type= "text/css" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700" rel="stylesheet">
+		<link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-54061078-1', 'auto');
+			ga('send', 'pageview');
+
+            function toggle_select_pubs() {
+                if ($("#toggle_pub_button").text() == "Expand") {
+                    $(".paper").css("display", "");
+                    $("#toggle_pub_button").text("Collapse");
+                } else {
+                    $(".paper").css("display", "none");
+                    $(".paper.select").css("display", "");
+                    $("#toggle_pub_button").text("Expand");
+                }
+            }
+
+            $(document).ready(function() {
+                $(".paper").css("display", "none");
+                $(".paper.select").css("display", "");
+            });
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="profile" valign="top">
+			    <div id="photo">
+                    <img src="images/yohanjo.jpg" alt="Yohan Jo" />
+                </div>
+                <div id="short_intro">
+                    <h1>Yohan Jo</h1>
+                    <br />
+                    <p><a href="https://www.amazon.com/">Amazon.com, Inc.</a></p>
+                    <p><a href="https://www.amazon.science/research-areas/conversational-ai-natural-language-processing">Alexa AI &mdash; Natural Understanding</a></p>
+                    <p>jyoha&#64;amazon.com</p>
+                </div>
+                <div style="display: table-cell; width: auto;"></div>
+			</div>
+			<div id="main">
+				<div id="research_interests" class="section">
+					<h2>Research Interests</h2>
+                    <p>Natural Language Processing, Conversational AI</p>
+				</div>
+				<div id="selected_publications" class="section">
+					<h2>Publications <button id="toggle_pub_button" onclick="toggle_select_pubs();">Expand</button></h2>
+					<ol>
+                        <li class="paper select"><p class="paper_title">Classifying Argumentative Relations Using Logical Mechanisms and Argumentation Schemes <span class="link">[<a href="https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00394/106790">Paper</a>|<a href="https://github.com/yohanjo/tacl_arg_rel">Git</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Seojin Bang, Chris Reed, Eduard Hovy</p>
+                            <p class="paper_venue">[TACL] Transactions of the Association for Computational Linguistics, vol. 9, 2021</p></li>
+
+                        <li class="paper select"><p class="paper_title">Detecting Attackable Sentences in Arguments <span class="link">[<a href="https://www.aclweb.org/anthology/2020.emnlp-main.1">Paper</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Seojin Bang, Emaad Manzoor, Eduard Hovy, Chris Reed</p>
+                            <p class="paper_venue">[EMNLP] Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing, 2020</p></li>
+
+                        <li class="paper select"><p class="paper_title">Extracting Implicitly Asserted Propositions in Argumentation <span class="link">[<a href="https://www.aclweb.org/anthology/2020.emnlp-main.2">Paper</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Jacky Visser, Chris Reed, Eduard Hovy</p>
+                            <p class="paper_venue">[EMNLP] Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing, 2020</p></li>
+
+                        <li class="paper select"><p class="paper_title">Machine-Aided Annotation for Fine-Grained Proposition Types in Argumentation <span class="link">[<a href="research/papers/LREC20.pdf">Paper</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Elijah Mayfield, Chris Reed, Eduard Hovy</p>
+                            <p class="paper_venue">[LREC] Proceedings of the 12th International Conference on Language Resources and Evaluation, 2020</p></li>
+
+                        <li class="paper select"><p class="paper_title">A Cascade Model for Proposition Extraction in Argumentation <span class="link">[<a href="https://www.aclweb.org/anthology/W19-4502">Paper</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Jacky Visser, Chris Reed, Eduard Hovy</p>
+                            <p class="paper_venue">Proceedings of the 6th Workshop on Argument Mining, 2019</p></li>
+
+                        <li class="paper"><p class="paper_title">Using Functional Schemas to Understand Social Media Narratives <span class="link">[<a href="https://www.aclweb.org/anthology/W19-3403">Paper</a>]</span></p>
+                            <p class="paper_authors">Xinru Yan, Aakanksha Naik, <span class="emph">Yohan Jo</span>, Carolyn P. Rose</p>
+                            <p class="paper_venue">Proceedings of the Second Workshop on Storytelling, 2019</p></li>
+
+                        <li class="paper select"><p class="paper_title">Attentive Interaction Model: Modeling Changes in View in Argumentation <span class="link">[<a href="research/papers/NAACL18.pdf">Paper</a>|<a href="https://github.com/yohanjo/aim">Homepage</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Shivani Poddar, Byungsoo Jeon, Qinlan Shen, Carolyn P. Rose, Graham Neubig</p>
+                            <p class="paper_venue">[NAACL] Proceedings of the 2018 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, 2018</p></li>
+
+                        <li class="paper select"><p class="paper_title">Perceptions of Censorship and Moderation in Political Debate Forums <span class="link">[<a href="research/papers/ICWSM18.pdf">Paper</a>|<a href="https://aaai.org/ocs/index.php/ICWSM/ICWSM18/paper/view/17809">Homepage</a>]</span></p>
+                            <p class="paper_authors">Qinlan Shen, Michael Yoder, <span class="emph">Yohan Jo</span>, Carolyn P. Rose</p>
+                            <p class="paper_venue">[ICWSM] Proceedings of the 12th International AAAI Conference on Web and Social Media, 2018</p></li>
+
+                        <li class="paper select"><p class="paper_title">Time Series Analysis of Clickstream Logs from Online Courses <span class="link">[<a href="https://arxiv.org/abs/1809.04177" title="arXiv">Report</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>*, Keith Maki*, Gaurav Tomar*</p>
+                            <p class="paper_venue">arXiv:1809.04177 [cs.HC], 2018</p></li>
+
+                        <li class="paper select"><p class="paper_title">Roles and Success in Wikipedia Talk Pages: Identifying Latent Patterns of Behavior <span class="link">[<a href="research/papers/IJCNLP17.pdf">Paper</a>]</span></p>
+                            <p class="paper_authors">Keith Maki, Michael Miller Yoder, <span class="emph">Yohan Jo</span>, Carolyn P. Rose</p>
+                            <p class="paper_venue">[IJCNLP] Proceedings of the 8th International Joint Conference on Natural Language Processing, 2017</p>
+                            <p class="best_paper emph">Best Student Paper Award</p></li>
+
+                        <li class="paper select"><p class="paper_title">Modeling Dialogue Acts with Content Word Filtering and Speaker Preferences <span class="link">[<a href="research/papers/EMNLP17.pdf">Paper</a>|<a href="https://github.com/yohanjo/Dialogue-Acts/tree/master/EMNLP17">Homepage</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Michael Miller Yoder, Hyeju Jang, Carolyn P. Rose</p>
+                            <p class="paper_venue">[EMNLP] Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing, 2017</p></li>
+
+                        <li class="paper select"><p class="paper_title">Combining LSTM and Latent Topic Modeling for Mortality Prediction <span class="link">[<a href="https://arxiv.org/abs/1709.02842" title="arXiv">Report</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Lisa Lee, Shruti Palaskar</p>
+                            <p class="paper_venue">arXiv:1709.02842 [cs.CL], 2017</p></li>
+
+                        <li class="paper"><p class="paper_title">Simplifying the Bible and Wikipedia Using Statistical Machine Translation <span class="link">[<a href="https://arxiv.org/abs/1703.08646" title="arXiv">Report</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span></p>
+                            <p class="paper_venue">arXiv:1703.08646 [cs.CL], 2017</p></li>
+
+                        <li class="paper select"><p class="paper_title">Metaphor Detection Using Topic Transition, Emotion, and Cognition in Context <span class="link">[<a href="research/papers/ACL16.pdf" title="Download">Paper</a>]</span></p>
+                            <p class="paper_authors">Hyeju Jang, <span class="emph">Yohan Jo</span>, Michael Miller, Qinlan Shen, Seungwhan Moon, Carolyn P. Rose</p>
+                            <p class="paper_venue">[ACL] Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics, 2016</p></li>
+
+                        <li class="paper select"><p class="paper_title">Expediting Support for Social Learning with Behavior Modeling <span class="link">[<a href="research/papers/EDM16.pdf" title="Download">Paper</a>|<a href="https://arxiv.org/abs/1605.02836" title="arXiv">TechReport</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Gaurav Tomar, Oliver Ferschke, Carolyn P. Rose, Dragan Gasevic</p>
+                            <p class="paper_venue">[EDM] Proceedings of the 9th International Conference on Educational Data Mining, 2016</p></li>
+
+                        <li class="paper"><p class="paper_title">Pipeline for Expediting Learning Analytics and Student Support from Data in Social Learning <span class="link">[<a href="research/papers/LAK16.pdf" title="Download">Paper</a>|<a href="research/papers/LAK16_Poster.pdf" title="Download">Poster</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Gaurav Tomar, Oliver Ferschke, Carolyn P. Rose, Dragan Gasevic</p>
+                            <p class="paper_venue">Poster at the 6th International Learning Analytics and Knowledge Conference (LAK), 2016</p></li>
+
+                        <li class="paper select"><p class="paper_title">Time Series Analysis of Nursing Notes for Mortality Prediction via State Transition Topic Model <span class="link">[<a href="research/papers/CIKM15.pdf" title="Download">Paper</a>|<a href="research/papers/CIKM15_Slides.pdf" title="Download">Slides</a>|<a href="research/CIKM15/index.html" title="Go to webpage">Home</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Natasha Loghmanpour, Carolyn P. Rose</p>
+                            <p class="paper_venue">[CIKM] Proceedings of the 24th ACM International Conference on Information and Knowledge Management, 2015</p></li>
+
+                        <li class="paper select"><p class="paper_title">Metaphor Detection in Discourse <span class="link">[<a href="research/papers/SIGDIAL15.pdf" title="Download">Paper</a>]</span></p>
+                            <p class="paper_authors">Hyeju Jang, Seungwhan Moon, <span class="emph">Yohan Jo</span>, Carolyn P. Rose</p>
+                            <p class="paper_venue">[SIGDial] Proceedings of the 16th Annual Meeting of the Special Interest Group on Discourse and Dialogue, 2015</p></li>
+
+                        <li class="paper select"><p class="paper_title">Aspect and Sentiment Unification Model for Online Review Analysis <span class="link">[<a href="research/papers/WSDM11.pdf" title="Download">Paper</a>|<a href="research/WSDM11/index.html" title="Go to webpage">Home</a>]</span></p>
+                            <p class="paper_authors"><span class="emph">Yohan Jo</span>, Alice Oh</p>
+                            <p class="paper_venue">[WSDM] Proceedings of the 4th ACM International Conference on Web Search and Data Mining, 2011</p></li>
+
+                        <li class="paper"><p class="paper_title">Do you feel what I feel? Social Aspects of Emotions in Twitter Conversations <span class="link">[<a href="research/papers/NIPS11.pdf" title="Download">Paper</a>]</span></p>
+                            <p class="paper_authors">Suin Kim, JinYeong Bak, <span class="emph">Yohan Jo</span>, Alice Oh</p>
+                            <p class="paper_venue">Workshop on Computational Social Science and the Wisdom of Crowds, 2011</p></li>
+
+                        <li class="paper"><p class="paper_title">Analysis of Twitter Lists as a Potential Source for Discovering Latent Characteristics of Users <span class="link">[<a href="research/papers/CHI10.pdf" title="Download">Paper</a>]</span></p>
+                            <p class="paper_authors">Dongwoo Kim, <span class="emph">Yohan Jo</span>, Alice Oh</p>
+                            <p class="paper_venue">Workshop on Microblogging, 2010</p></li>
+
+                        <li class="paper"><p class="paper_title">Learning Influence Propagation of Personal Blogs with Content and Network Analyses <span class="link">[<a href="research/papers/SocialCom10.pdf" title="Download">Paper</a>]</span></p>
+                            <p class="paper_authors">Il-Chul Moon, Dongwoo Kim, <span class="emph">Yohan Jo</span>, Alice Oh</p>
+                            <p class="paper_venue">[SocialCom] Proceedings of the 2010 IEEE Second International Conference on Social Computing, 2010</p></li>
+					</ol>
+				</div>
+
+				<div id="education" class="section">
+					<h2>Education</h2>
+					<ul class="nobullet">
+						<li><b><a href="http://www.cmu.edu">Carnegie Mellon University</a></b>, Pittsburgh, Pennsylvania, USA</span>
+							<ul>
+                                <li>Ph.D. in <a href="http://lti.cs.cmu.edu">Language and Information Technologies</a> (Advisor: <a href="https://www.cs.cmu.edu/~hovy/">Prof. Eduard Hovy</a>) <span class="date">(2021)</span></li>
+                                <li>M.S. in <a href="http://lti.cs.cmu.edu">Language Technologies</a> (Advisor: <a href="http://www.cs.cmu.edu/~cprose/">Prof. Carolyn P. Rosé</a>)  <span class="date">(2016)</span></li>
+							</ul>
+						</li>
+						<li><b><a href="http://www.kaist.edu">Korea Advanced Institute of Science and Technology (KAIST)</a></b>, Daejeon, Korea</span>
+							<ul>
+                                <li>M.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a> (Advisor: <a href="http://uilab.kaist.ac.kr/members/aliceoh/">Prof. Alice Oh</a>)  <span class="date">(2011)</span></li>
+                                <li>B.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a>  <span class="date">(2009)</span></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id="work_experience" class="section">
+					<h2>Work</h2>
+					<ul>
+						<li>Applied Scientist, <b><a href="https://www.amazon.science/research-areas/conversational-ai-natural-language-processing">Amazon.com, Inc.</a></b> <span class="date">(August 2021&ndash;Present)</span> </li>
+						<li>ML Research &amp; NLP Intern, <b><a href="https://machinelearning.apple.com/">Apple Inc.</a></b> <span class="date">(June&ndash;August 2020)</span> </li>
+						<li>Research &amp; Development Intern, <b><a href="http://www.ets.org">Educational Testing Service (ETS)</a></b> <span class="date">(June&ndash;July 2017)</span> </li>
+						<li>Researcher, <b><a href="http://www.etri.re.kr/eng">Electronics and Telecommunications Research Institute (ETRI)</a></b> <span class="date">(February 2011&ndash;July 2014)</span> </li>
+						<li>Software Engineering Intern, <b>MirageWorks</b> <span class="date">(June&ndash;August 2008)</span> </li>
+
+					</ul>
+				</div>
+				<div id="awards" class="section">
+					<h2>Awards</h2>
+					<ul>
+                        <li>CMU GuSH Research Grants <span class="date">(2019&ndash;2021)</span></li>
+                        <li>CMU Presidential Fellowship <span class="date">(2019&ndash;2020)</span></li>
+						<li>Kwanjeong Scholarship by <a href="http://www.ikef.or.kr/">Kwanjeong Educational Foundation</a> <span class="date">(2014&ndash;2020)</span></li>
+						<li>Best Student Paper Award at the 8th International Joint Conference on Natural Language Processing (IJCNLP) <span class="date">(2017)</span></li>
+						<li>Outstanding Master's Thesis Award by the <a href="https://cs.kaist.ac.kr">KAIST School of Computing</a> <span class="date">(2011)</span></li>
+						<li>Graduation with Honors, <i>Summa Cum Laude</i> <span class="date">(2009)</span></li>
+						<li>National Research Scholarship by the Korea Student Aid Foundation <span class="date">(2009&ndash;2011)</span></li>
+						<li>National Scholarship by the Korea Student Aid Foundation <span class="date">(2004&ndash;2008)</span></li>
+					</ul>
+				</div>
+			    <div id="teaching_experience" class="section">
+                    <h2>Teaching</h2>
+                    <p style="padding:0; margin:-10px 0 10px 5px;"><a href="files/teaching_statement.pdf">(Statement)</a></p>
+					<ul>
+                        <li>Teaching Assistant, <b>Carnegie Mellon University</b> <span class="date">(Spring &amp; Fall 2019)</span>
+                            <ul class="nobullet"><li>Introduction to Natural Language Processing</li></ul>
+                        </li>
+                        <li>Teacher, <b>Pittsburgh Westinghouse Academy 6&ndash;12 (<a href="https://www.tealsk12.org">TEALS</a>)</b> <span class="date">(August 2017&ndash;May 2018)</span>
+                            <ul class="nobullet"><li>Programming for high school students at Westinghouse Academy 6&ndash;12</li></ul>
+                        </li>
+                        <li>Teacher, <b><a href="https://www.carnegielibrary.org/">Carnegie Library of Pittsburgh</a></b> <span class="date">(June 2015&ndash;June 2016)</span>
+                            <ul class="nobullet"><li>Korean for Pittsburgh residents</li></ul>
+                        </li>
+                        <li>Teacher, <b><a href="https://www.facebook.com/edushare/">Edushare</a></b> <span class="date">(February&ndash;May 2010)</span>
+                            <ul class="nobullet"><li>Math for middle school students from low-income families</li></ul>
+                        </li>
+                        <li>Teaching Assistant, <b>KAIST</b> <span class="date">(Spring &amp; Fall 2009)</span>
+                            <ul class="nobullet"><li>Algorithms for undergraduate students in Problem Solving course</li></ul>
+                        </li>
+                    </ul>
+				</div>
+			    <div id="invited_talks" class="section">
+                    <h2>Invited Talks</h2>
+					<ul>
+                        <li>Sungkyunkwan University &mdash; Natural Language Inference with Reasoning and Knowledge <span class="date">(Jul 2021)</li>
+                    </ul>
+			</div>
+			<div id="footer">
+			</div>
+		</div>
+	</body>
+</html>
