@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+
+		<title>Yohan Jo's Homepage</title>
+		<link rel="shortcut icon" href="../../images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="../style.css" />
+	
+	</head>
+	<body>
+		<div id="wrap">
+			<h1>Aspect and Sentiment Unification Model for Online Review Analysis</h1>
+
+			<p><span class="cite me">Yohan Jo</span> and Alice Oh, <span class="cite title">Aspect and Sentiment Unification Model for Online Review Analysis</span>, In <span class="cite booktitle">Proceedings of the 4th ACM International Conference on Web Search and Data Mining (WSDM)</span>, 2011. <span class="cite link">[<a href="../papers/WSDM11.pdf" title="Download">Paper</a>]</span></p>
+
+			<h2>Abstract</h2>
+			<p>User-generated reviews on the Web contain sentiments about detailed aspects of products and services. However, most of the reviews are plain text and thus require much effort to obtain information about relevant details. In this paper, we tackle the problem of automatically discovering what aspects are evaluated in reviews and how sentiments for different aspects are expressed. We first propose Sentence-LDA (SLDA), a probabilistic generative model that assumes all words in a single sentence are generated from one aspect. We then extend SLDA to Aspect and Sentiment Unification Model (ASUM), which incorporates aspect and sentiment together to model sentiments toward different aspects. ASUM discovers pairs of {aspect, sentiment} which we call senti-aspects. We applied SLDA and ASUM to reviews of electronic devices and restaurants. The results show that the aspects discovered by SLDA match evaluative details of the reviews, and the senti-aspects found by ASUM capture important aspects that are closely coupled with a sentiment. The results of sentiment classification show that ASUM outperforms other generative models and comes close to supervised classification methods. One important advantage of ASUM is that it does not require any sentiment labels of the reviews, which are often expensive to obtain.</p>
+
+			<h2>Data</h2>
+			<ul>
+				<li>Electronic device reviews (Amazon) <a href="Amazon.zip">[Link]</a></li>
+				<li>Restaurant reviews (Yelp) <a href="Yelp.zip">[Link]</a></li>
+			</ul>
+			<p>NOTE: Some reviews may appear multiple times</p>
+
+			<h2>Source Code</h2>
+			<p><a href="ASUM.zip">Java Code</a></p>
+		</div>
+	</body>
+</html>
