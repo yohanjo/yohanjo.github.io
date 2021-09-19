@@ -1,49 +1,49 @@
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="Content-Script-Type" content="text/javascript" />
-		<meta http-equiv="Content-Style-Type" content="text/css" />
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Script-Type" content="text/javascript" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
 
-		<title>Yohan Jo's Homepage</title>
-		<link rel="shortcut icon" href="images/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<!--[if !IE]>-->
+        <title>Yohan Jo's Homepage</title>
+        <link rel="shortcut icon" href="images/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <!--[if !IE]>-->
         <link media="only screen and (max-width: 500px)" href="iphone.css" type= "text/css" rel="stylesheet">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700" rel="stylesheet">
-		<link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script type="text/javascript">
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			ga('create', 'UA-54061078-1', 'auto');
-			ga('send', 'pageview');
+            ga('create', 'UA-54061078-1', 'auto');
+            ga('send', 'pageview');
 
             function toggle_select_pubs() {
-                if ($("#toggle_pub_button").text() == "Expand") {
-                    $(".paper").css("display", "");
-                    $("#toggle_pub_button").text("Collapse");
-                } else {
-                    $(".paper").css("display", "none");
-                    $(".paper.select").css("display", "");
-                    $("#toggle_pub_button").text("Expand");
-                }
+                            if ($("#toggle_pub_button").text() == "Expand") {
+                                $(".paper").css("display", "");
+                                $("#toggle_pub_button").text("Collapse");
+                            } else {
+                                $(".paper").css("display", "none");
+                                $(".paper.select").css("display", "");
+                                $("#toggle_pub_button").text("Expand");
+                            }
             }
 
             $(document).ready(function() {
                 $(".paper").css("display", "none");
                 $(".paper.select").css("display", "");
             });
-		</script>
-	</head>
-	<body>
-		<div id="wrap">
-			<div id="profile" valign="top">
-			    <div id="photo">
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="profile" valign="top">
+                <div id="photo">
                     <img src="images/yohanjo.jpg" alt="Yohan Jo" />
                 </div>
                 <div id="short_intro">
@@ -54,15 +54,15 @@
                     <p>jyoha&#64;amazon.com</p>
                 </div>
                 <div style="display: table-cell; width: auto;"></div>
-			</div>
-			<div id="main">
-				<div id="research_interests" class="section">
-					<h2>Research Interests</h2>
+            </div>
+            <div id="main">
+                <div id="research_interests" class="section">
+                    <h2>Research Interests</h2>
                     <p>Natural Language Processing, Conversational AI</p>
-				</div>
-				<div id="selected_publications" class="section">
-					<h2>Publications <button id="toggle_pub_button" onclick="toggle_select_pubs();">Expand</button></h2>
-					<ol>
+                </div>
+                <div id="selected_publications" class="section">
+                    <h2>Publications <button id="toggle_pub_button" onclick="toggle_select_pubs();">Expand</button></h2>
+                    <ol>
                         <li class="paper select"><p class="paper_title">Classifying Argumentative Relations Using Logical Mechanisms and Argumentation Schemes <span class="link">[<a href="https://direct.mit.edu/tacl/article/doi/10.1162/tacl_a_00394/106790">Paper</a>|<a href="https://github.com/yohanjo/tacl_arg_rel">Git</a>]</span></p>
                             <p class="paper_authors"><span class="emph">Yohan Jo</span>, Seojin Bang, Chris Reed, Eduard Hovy</p>
                             <p class="paper_venue">[TACL] Transactions of the Association for Computational Linguistics, vol. 9, 2021</p></li>
@@ -151,54 +151,54 @@
                         <li class="paper"><p class="paper_title">Learning Influence Propagation of Personal Blogs with Content and Network Analyses <span class="link">[<a href="research/papers/SocialCom10.pdf" title="Download">Paper</a>]</span></p>
                             <p class="paper_authors">Il-Chul Moon, Dongwoo Kim, <span class="emph">Yohan Jo</span>, Alice Oh</p>
                             <p class="paper_venue">[SocialCom] Proceedings of the 2010 IEEE Second International Conference on Social Computing, 2010</p></li>
-					</ol>
-				</div>
+                    </ol>
+                </div>
 
-				<div id="education" class="section">
-					<h2>Education</h2>
-					<ul class="nobullet">
-						<li><b><a href="http://www.cmu.edu">Carnegie Mellon University</a></b>, Pittsburgh, Pennsylvania, USA</span>
-							<ul>
-                                <li>Ph.D. in <a href="http://lti.cs.cmu.edu">Language and Information Technologies</a> (Advisor: <a href="https://www.cs.cmu.edu/~hovy/">Prof. Eduard Hovy</a>) <span class="date">(2021)</span></li>
-                                <li>M.S. in <a href="http://lti.cs.cmu.edu">Language Technologies</a> (Advisor: <a href="http://www.cs.cmu.edu/~cprose/">Prof. Carolyn P. Rosé</a>)  <span class="date">(2016)</span></li>
-							</ul>
-						</li>
-						<li><b><a href="http://www.kaist.edu">Korea Advanced Institute of Science and Technology (KAIST)</a></b>, Daejeon, Korea</span>
-							<ul>
-                                <li>M.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a> (Advisor: <a href="http://uilab.kaist.ac.kr/members/aliceoh/">Prof. Alice Oh</a>)  <span class="date">(2011)</span></li>
-                                <li>B.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a>  <span class="date">(2009)</span></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div id="work_experience" class="section">
-					<h2>Work</h2>
-					<ul>
-						<li>Applied Scientist, <b><a href="https://www.amazon.science/research-areas/conversational-ai-natural-language-processing">Amazon.com, Inc.</a></b> <span class="date">(August 2021&ndash;Present)</span> </li>
-						<li>ML Research &amp; NLP Intern, <b><a href="https://machinelearning.apple.com/">Apple Inc.</a></b> <span class="date">(June&ndash;August 2020)</span> </li>
-						<li>Research &amp; Development Intern, <b><a href="http://www.ets.org">Educational Testing Service (ETS)</a></b> <span class="date">(June&ndash;July 2017)</span> </li>
-						<li>Researcher, <b><a href="http://www.etri.re.kr/eng">Electronics and Telecommunications Research Institute (ETRI)</a></b> <span class="date">(February 2011&ndash;July 2014)</span> </li>
-						<li>Software Engineering Intern, <b>MirageWorks</b> <span class="date">(June&ndash;August 2008)</span> </li>
+                <div id="education" class="section">
+                    <h2>Education</h2>
+                    <ul class="nobullet">
+                        <li><b><a href="http://www.cmu.edu">Carnegie Mellon University</a></b>, Pittsburgh, Pennsylvania, USA</span>
+                        <ul>
+                            <li>Ph.D. in <a href="http://lti.cs.cmu.edu">Language and Information Technologies</a> (Advisor: <a href="https://www.cs.cmu.edu/~hovy/">Prof. Eduard Hovy</a>) <span class="date">(2021)</span></li>
+                            <li>M.S. in <a href="http://lti.cs.cmu.edu">Language Technologies</a> (Advisor: <a href="http://www.cs.cmu.edu/~cprose/">Prof. Carolyn P. Rosé</a>)  <span class="date">(2016)</span></li>
+                        </ul>
+                        </li>
+                        <li><b><a href="http://www.kaist.edu">Korea Advanced Institute of Science and Technology (KAIST)</a></b>, Daejeon, Korea</span>
+                        <ul>
+                            <li>M.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a> (Advisor: <a href="http://uilab.kaist.ac.kr/members/aliceoh/">Prof. Alice Oh</a>)  <span class="date">(2011)</span></li>
+                            <li>B.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a>  <span class="date">(2009)</span></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="work_experience" class="section">
+                    <h2>Work</h2>
+                    <ul>
+                        <li>Applied Scientist, <b><a href="https://www.amazon.science/research-areas/conversational-ai-natural-language-processing">Amazon.com, Inc.</a></b> <span class="date">(August 2021&ndash;Present)</span> </li>
+                        <li>ML Research &amp; NLP Intern, <b><a href="https://machinelearning.apple.com/">Apple Inc.</a></b> <span class="date">(June&ndash;August 2020)</span> </li>
+                        <li>Research &amp; Development Intern, <b><a href="http://www.ets.org">Educational Testing Service (ETS)</a></b> <span class="date">(June&ndash;July 2017)</span> </li>
+                        <li>Researcher, <b><a href="http://www.etri.re.kr/eng">Electronics and Telecommunications Research Institute (ETRI)</a></b> <span class="date">(February 2011&ndash;July 2014)</span> </li>
+                        <li>Software Engineering Intern, <b>MirageWorks</b> <span class="date">(June&ndash;August 2008)</span> </li>
 
-					</ul>
-				</div>
-				<div id="awards" class="section">
-					<h2>Awards</h2>
-					<ul>
+                    </ul>
+                </div>
+                <div id="awards" class="section">
+                    <h2>Awards</h2>
+                    <ul>
                         <li>CMU GuSH Research Grants <span class="date">(2019&ndash;2021)</span></li>
                         <li>CMU Presidential Fellowship <span class="date">(2019&ndash;2020)</span></li>
-						<li>Kwanjeong Scholarship by <a href="http://www.ikef.or.kr/">Kwanjeong Educational Foundation</a> <span class="date">(2014&ndash;2020)</span></li>
-						<li>Best Student Paper Award at the 8th International Joint Conference on Natural Language Processing (IJCNLP) <span class="date">(2017)</span></li>
-						<li>Outstanding Master's Thesis Award by the <a href="https://cs.kaist.ac.kr">KAIST School of Computing</a> <span class="date">(2011)</span></li>
-						<li>Graduation with Honors, <i>Summa Cum Laude</i> <span class="date">(2009)</span></li>
-						<li>National Research Scholarship by the Korea Student Aid Foundation <span class="date">(2009&ndash;2011)</span></li>
-						<li>National Scholarship by the Korea Student Aid Foundation <span class="date">(2004&ndash;2008)</span></li>
-					</ul>
-				</div>
-			    <div id="teaching_experience" class="section">
+                        <li>Kwanjeong Scholarship by <a href="http://www.ikef.or.kr/">Kwanjeong Educational Foundation</a> <span class="date">(2014&ndash;2020)</span></li>
+                        <li>Best Student Paper Award at the 8th International Joint Conference on Natural Language Processing (IJCNLP) <span class="date">(2017)</span></li>
+                        <li>Outstanding Master's Thesis Award by the <a href="https://cs.kaist.ac.kr">KAIST School of Computing</a> <span class="date">(2011)</span></li>
+                        <li>Graduation with Honors, <i>Summa Cum Laude</i> <span class="date">(2009)</span></li>
+                        <li>National Research Scholarship by the Korea Student Aid Foundation <span class="date">(2009&ndash;2011)</span></li>
+                        <li>National Scholarship by the Korea Student Aid Foundation <span class="date">(2004&ndash;2008)</span></li>
+                    </ul>
+                </div>
+                <div id="teaching_experience" class="section">
                     <h2>Teaching</h2>
                     <p style="padding:0; margin:-10px 0 10px 5px;"><a href="files/teaching_statement.pdf">(Statement)</a></p>
-					<ul>
+                    <ul>
                         <li>Teaching Assistant, <b>Carnegie Mellon University</b> <span class="date">(Spring &amp; Fall 2019)</span>
                             <ul class="nobullet"><li>Introduction to Natural Language Processing</li></ul>
                         </li>
@@ -215,17 +215,17 @@
                             <ul class="nobullet"><li>Algorithms for undergraduate students in Problem Solving course</li></ul>
                         </li>
                     </ul>
-				</div>
-			    <div id="invited_talks" class="section">
+                </div>
+                <div id="invited_talks" class="section">
                     <h2>Invited Talks</h2>
-					<ul>
+                    <ul>
                         <li>University of Minnesota, Twin Cities &mdash; NLP Seminar <span class="date">(Sept 2021)</li>
                         <li>Sungkyunkwan University &mdash; AI Seminar <span class="date">(Jul 2021)</li>
                     </ul>
-			    </div>
+                </div>
             </div>
             <div id="footer">
             </div>
-		</div>
-	</body>
+        </div>
+    </body>
 </html>
