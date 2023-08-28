@@ -26,21 +26,30 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
         <script type="text/javascript">
-            function toggle_select_pubs() {
-                            if ($("#toggle_pub_button").text() == "Expand") {
-                                $(".paper").css("display", "");
-                                $("#toggle_pub_button").text("Collapse");
-                            } else {
-                                $(".paper").css("display", "none");
-                                $(".paper.select").css("display", "");
-                                $("#toggle_pub_button").text("Expand");
-                            }
-            }
+            document.addEventListener('DOMContentLoaded', function() {
+                let ol = document.querySelector('ol');
+                let showMoreBtn = document.getElementById('showMoreBtn');
+                let showLessBtn = document.getElementById('showLessBtn');
 
-            $(document).ready(function() {
-                //$(".paper").css("display", "none");
-                //$(".paper.select").css("display", "");
+                showMoreBtn.addEventListener('click', function() {
+                    // Show all items in the list
+                    ol.classList.add('show-all');
+
+                    // Swap visibility of buttons
+                    showMoreBtn.style.display = 'none';
+                    showLessBtn.style.display = 'inline-block';
+                });
+
+                showLessBtn.addEventListener('click', function() {
+                    // Hide extra items in the list
+                    ol.classList.remove('show-all');
+
+                    // Swap visibility of buttons
+                    showLessBtn.style.display = 'none';
+                    showMoreBtn.style.display = 'inline-block';
+                });
             });
+
         </script>
     </head>
     <body>
@@ -64,7 +73,6 @@
                     <p>Natural Language Processing, Argumentation and Persuasion, Conversational AI</p>
                 </div>
                 <div id="selected_publications" class="section">
-                    <!--<h2>Publications <button id="toggle_pub_button" onclick="toggle_select_pubs();">Expand</button></h2>-->
                     <h2>Publications</h2>
                     <ol>
                         <li class="paper select"><p class="paper_title">A Zero-Shot Approach for Multi-User Task-Oriented Dialog Generation <span class="link">(To Appear)</span></p>
@@ -188,6 +196,8 @@
                             <p class="paper_authors">Il-Chul Moon, Dongwoo Kim, <span class="emph">Yohan Jo</span>, Alice Oh</p>
                             <p class="paper_venue">[SocialCom] Proceedings of the 2010 IEEE Second International Conference on Social Computing, 2010</p></li>
                     </ol>
+                    <button id="showMoreBtn">Show More</button>
+                    <button id="showLessBtn" style="display: none;">Show Less</button>
                 </div>
 
                 <div id="awards" class="section">

@@ -81,6 +81,19 @@ ol li {
 	margin-bottom: 10px;
 }
 
+/* Show More, Show Less */
+li.paper {
+    display: none;
+}
+
+li.paper:nth-child(-n+6) {
+    display: list-item;
+}
+
+.show-all li.paper {
+    display: list-item;
+}
+/*-------------------------*/
 
 .korean {
 	font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
