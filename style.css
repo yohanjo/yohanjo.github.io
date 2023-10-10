@@ -86,7 +86,7 @@ li.paper {
     display: none;
 }
 
-li.paper:nth-child(-n+6) {
+li.paper:nth-child(-n+9) {
     display: list-item;
 }
 
