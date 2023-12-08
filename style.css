@@ -114,10 +114,24 @@ li.paper:nth-child(-n+9) {
 	font-size: 12pt;
 }
 
+#profile_left_margin {
+    display: table-cell;
+    width: 10%; 
+}
+
+#short_intro {
+    display: table-cell;
+	text-align: center;
+    /*width: 400px;*/
+    width: 50%;
+    vertical-align: top;
+    padding-top: 25px;
+}
+
 #photo {
     display: table-cell;
-    width: 35%;
-    text-align: right;
+    width: 30%;
+    text-align: left;
 }
 
 #photo img {
@@ -126,12 +140,9 @@ li.paper:nth-child(-n+9) {
     width: auto;
 }
 
-#short_intro {
+#profile_right_margin {
     display: table-cell;
-	text-align: center;
-    width: 400px;
-    vertical-align: top;
-    padding-top: 25px;
+    width: auto; 
 }
 
 .clear {
