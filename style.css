@@ -32,6 +32,7 @@ h2 {
 	color: #666;
 	font-size: 20pt;
 	font-weight: 300;
+    margin-top: 0;
 	/*font-variant: small-caps;*/
 }
 
@@ -195,9 +196,9 @@ p.bigskip {
 }
 
 .section {
-	padding-bottom: 20px;
-	margin-bottom: 20px;
-	border-top: 1px solid #eee;
+	padding: 20px 0;
+	/*margin: 20px 0;*/
+	border-bottom: 1px solid #eee;
 }
 
 .section p {
