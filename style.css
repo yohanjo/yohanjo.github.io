@@ -122,8 +122,8 @@ li.paper:nth-child(-n+9) {
 #short_intro {
     display: table-cell;
 	text-align: center;
-    /*width: 400px;*/
     width: 50%;
+    min-width: 250px;
     vertical-align: top;
     padding-top: 25px;
 }
