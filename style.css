@@ -285,3 +285,18 @@ p.bigskip {
 .emph {
     color: #ee4443;
 }
+
+#lab_intro {
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#lab_intro img {
+    display: block;
+    margin-top: 20px;
+}
+
+#lab_intro img {
+    max-width: 100%;
+}
