@@ -14,7 +14,7 @@
         <meta http-equiv="Content-Script-Type" content="text/javascript" />
         <meta http-equiv="Content-Style-Type" content="text/css" />
 
-        <title>Yohan Jo's Homepage</title>
+        <title>HOLI Lab</title>
         <link rel="shortcut icon" href="images/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <!--[if !IE]>-->
@@ -24,33 +24,6 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
-        <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function() {
-                let ol = document.querySelector('ol');
-                let showMoreBtn = document.getElementById('showMoreBtn');
-                let showLessBtn = document.getElementById('showLessBtn');
-
-                showMoreBtn.addEventListener('click', function() {
-                    // Show all items in the list
-                    ol.classList.add('show-all');
-
-                    // Swap visibility of buttons
-                    showMoreBtn.style.display = 'none';
-                    showLessBtn.style.display = 'inline-block';
-                });
-
-                showLessBtn.addEventListener('click', function() {
-                    // Hide extra items in the list
-                    ol.classList.remove('show-all');
-
-                    // Swap visibility of buttons
-                    showLessBtn.style.display = 'none';
-                    showMoreBtn.style.display = 'inline-block';
-                });
-            });
-
-        </script>
     </head>
     <body>
         <div id="lab_intro">
