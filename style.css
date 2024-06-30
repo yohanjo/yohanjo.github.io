@@ -300,3 +300,7 @@ p.bigskip {
 #lab_intro img {
     max-width: 100%;
 }
+
+#lab_intro video {
+    max-width: 100%;
+}
