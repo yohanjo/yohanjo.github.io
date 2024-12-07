@@ -36,6 +36,18 @@ h2 {
 	/*font-variant: small-caps;*/
 }
 
+h3 {
+    margin: 20px 0 10px 0;
+}
+
+h4 {
+    margin: 0px 0 10px 0;
+}
+
+.student_list {
+    margin-bottom: 20px;
+}
+
 
 a:hover {
 	text-decoration: underline;
