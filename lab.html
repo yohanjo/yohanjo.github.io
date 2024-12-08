@@ -24,116 +24,71 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script defer>
-            /*
-            let currentIndex = 0;
-            function moveSlide(direction) {
-                const slides = document.querySelector('.slides');
-                const totalSlides = document.querySelectorAll('.slide').length;
-                currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
-                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-            }
-*/
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
 
-    document.addEventListener('DOMContentLoaded', function () {
-
-        const slides = document.querySelectorAll('.slide');
-        const dotsContainer = document.getElementById('dots-container');
-        const thumbnailPreview = document.getElementById('thumbnail-preview');
-        const thumbnailImg = document.getElementById('thumbnail-img');
-        let currentIndex = 0;
+                const slides = document.querySelectorAll('.slide');
+                const dotsContainer = document.getElementById('dots-container');
+                const thumbnailPreview = document.getElementById('thumbnail-preview');
+                const thumbnailImg = document.getElementById('thumbnail-img');
+                let currentIndex = 0;
 
 
-        // Initialize dots
-        slides.forEach((slide, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            dot.dataset.index = index;
-            dot.addEventListener('click', () => moveToSlide(index));
-            dot.addEventListener('mouseenter', () => showThumbnail(index));
-            dot.addEventListener('mouseleave', hideThumbnail);
-            dotsContainer.appendChild(dot);
-        });
+                // Initialize dots
+                slides.forEach((slide, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    dot.dataset.index = index;
+                    dot.addEventListener('click', () => moveToSlide(index));
+                    dot.addEventListener('mouseenter', () => showThumbnail(index));
+                    dot.addEventListener('mouseleave', hideThumbnail);
+                    dotsContainer.appendChild(dot);
+                });
 
-        function updateActiveDot() {
-            document.querySelectorAll('.dot').forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
+                function updateActiveDot() {
+                    document.querySelectorAll('.dot').forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                function moveSlide(direction) {
+                    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+                    updateSlidePosition();
+                }
+
+                function moveToSlide(index) {
+                    currentIndex = index;
+                    updateSlidePosition();
+                }
+
+                function updateSlidePosition() {
+                    const slidesElement = document.querySelector('.slides');
+                    slidesElement.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    updateActiveDot();
+                }
+
+                function showThumbnail(index) {
+                    if (window.innerWidth <= 768) {
+                        return;
+                    }
+                    const slide = slides[index];
+                    const img = slide.querySelector('img');
+                    thumbnailImg.src = img.src;
+                    thumbnailPreview.style.display = 'block';
+                }
+
+                function hideThumbnail() {
+                    thumbnailPreview.style.display = 'none';
+                }
+
+                // Set the first dot as active on page load
+                updateActiveDot();
+
+                window.moveSlide = moveSlide;
+                window.moveToSlide = moveToSlide;
+                window.showThumbnail = showThumbnail;
+                window.hideThumbnail = hideThumbnail;
             });
-        }
-
-        function moveSlide(direction) {
-            currentIndex = (currentIndex + direction + slides.length) % slides.length;
-            updateSlidePosition();
-        }
-
-        function moveToSlide(index) {
-            currentIndex = index;
-            updateSlidePosition();
-        }
-
-        function updateSlidePosition() {
-            const slidesElement = document.querySelector('.slides');
-            slidesElement.style.transform = `translateX(-${currentIndex * 100}%)`;
-            updateActiveDot();
-        }
-
-        function showThumbnail(index) {
-            const slide = slides[index];
-            const img = slide.querySelector('img');
-            thumbnailImg.src = img.src;
-            thumbnailPreview.style.display = 'block';
-        }
-
-        function hideThumbnail() {
-            thumbnailPreview.style.display = 'none';
-        }
-
-        // Set the first dot as active on page load
-        updateActiveDot();
-
-    window.moveSlide = moveSlide;
-    window.moveToSlide = moveToSlide;
-    window.showThumbnail = showThumbnail;
-    window.hideThumbnail = hideThumbnail;
-
-
-/*
-    // Initialize dots
-    slides.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        dot.dataset.index = index;
-        dot.addEventListener('click', () => moveToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-
-    function updateActiveDot() {
-        document.querySelectorAll('.dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    }
-
-    function updateSlidePosition() {
-        const slidesElement = document.querySelector('.slides');
-        slidesElement.style.transform = `translateX(-${currentIndex * 100}%)`;
-        updateActiveDot();
-    }
-
-    window.moveSlide = function (direction) {
-        currentIndex = (currentIndex + direction + slides.length) % slides.length;
-        updateSlidePosition();
-    };
-
-    window.moveToSlide = function (index) {
-        currentIndex = index;
-        updateSlidePosition();
-    };
-
-    // Set the first dot as active on page load
-    updateActiveDot();
-*/
-});
-
         </script>
     </head>
     <body>
