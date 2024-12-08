@@ -24,6 +24,117 @@
         <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script defer>
+            /*
+            let currentIndex = 0;
+            function moveSlide(direction) {
+                const slides = document.querySelector('.slides');
+                const totalSlides = document.querySelectorAll('.slide').length;
+                currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+*/
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const slides = document.querySelectorAll('.slide');
+        const dotsContainer = document.getElementById('dots-container');
+        const thumbnailPreview = document.getElementById('thumbnail-preview');
+        const thumbnailImg = document.getElementById('thumbnail-img');
+        let currentIndex = 0;
+
+
+        // Initialize dots
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.dataset.index = index;
+            dot.addEventListener('click', () => moveToSlide(index));
+            dot.addEventListener('mouseenter', () => showThumbnail(index));
+            dot.addEventListener('mouseleave', hideThumbnail);
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateActiveDot() {
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function moveSlide(direction) {
+            currentIndex = (currentIndex + direction + slides.length) % slides.length;
+            updateSlidePosition();
+        }
+
+        function moveToSlide(index) {
+            currentIndex = index;
+            updateSlidePosition();
+        }
+
+        function updateSlidePosition() {
+            const slidesElement = document.querySelector('.slides');
+            slidesElement.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateActiveDot();
+        }
+
+        function showThumbnail(index) {
+            const slide = slides[index];
+            const img = slide.querySelector('img');
+            thumbnailImg.src = img.src;
+            thumbnailPreview.style.display = 'block';
+        }
+
+        function hideThumbnail() {
+            thumbnailPreview.style.display = 'none';
+        }
+
+        // Set the first dot as active on page load
+        updateActiveDot();
+
+    window.moveSlide = moveSlide;
+    window.moveToSlide = moveToSlide;
+    window.showThumbnail = showThumbnail;
+    window.hideThumbnail = hideThumbnail;
+
+
+/*
+    // Initialize dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        dot.dataset.index = index;
+        dot.addEventListener('click', () => moveToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    function updateActiveDot() {
+        document.querySelectorAll('.dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function updateSlidePosition() {
+        const slidesElement = document.querySelector('.slides');
+        slidesElement.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateActiveDot();
+    }
+
+    window.moveSlide = function (direction) {
+        currentIndex = (currentIndex + direction + slides.length) % slides.length;
+        updateSlidePosition();
+    };
+
+    window.moveToSlide = function (index) {
+        currentIndex = index;
+        updateSlidePosition();
+    };
+
+    // Set the first dot as active on page load
+    updateActiveDot();
+*/
+});
+
+        </script>
     </head>
     <body>
         <div id="wrap">
@@ -32,14 +143,24 @@
                     <iframe src="https://www.youtube.com/embed/T1ciqmLWAfA?si=Y4W-JrMG44QxXcA1&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
-                <img href="slide1" src="images/lab/Slide1.jpeg" />
-                <img href="slide2" src="images/lab/Slide2.jpeg" />
-                <img href="slide3" src="images/lab/Slide3.jpeg" />
-                <img href="slide4" src="images/lab/Slide4.jpeg" />
-                <img href="slide5" src="images/lab/Slide5.jpeg" />
-                <img href="slide6" src="images/lab/Slide6.jpeg" />
-                <img href="slide7" src="images/lab/Slide7.jpeg" />
-                <img href="slide8" src="images/lab/Slide8.jpeg" />
+                <div class="slideshow-container">
+                    <div class="slides">
+                        <div class="slide"><img href="slide1" src="images/lab/Slide1.jpeg" /></div>
+                        <div class="slide"><img href="slide2" src="images/lab/Slide2.jpeg" /></div>
+                        <div class="slide"><img href="slide3" src="images/lab/Slide3.jpeg" /></div>
+                        <div class="slide"><img href="slide4" src="images/lab/Slide4.jpeg" /></div>
+                        <div class="slide"><img href="slide5" src="images/lab/Slide5.jpeg" /></div>
+                        <div class="slide"><img href="slide6" src="images/lab/Slide6.jpeg" /></div>
+                        <div class="slide"><img href="slide7" src="images/lab/Slide7.jpeg" /></div>
+                        <div class="slide"><img href="slide8" src="images/lab/Slide8.jpeg" /></div>
+                    </div>
+                    <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+                <div class="dots-container" id="dots-container"></div>
+                <div class="thumbnail-preview" id="thumbnail-preview">
+                    <img src="" alt="Thumbnail Preview" id="thumbnail-img">
+                </div>
             </div>
 
 
