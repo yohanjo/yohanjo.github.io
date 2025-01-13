@@ -27,29 +27,52 @@
 
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function() {
-                let ol = document.querySelector('ol');
-                let showMoreBtn = document.getElementById('showMoreBtn');
-                let showLessBtn = document.getElementById('showLessBtn');
+                // Publications section
+                let publicationsOl = document.querySelector('#selected_publications ol');
+                let showMorePublicationsBtn = document.getElementById('showMorePublicationsBtn');
+                let showLessPublicationsBtn = document.getElementById('showLessPublicationsBtn');
 
-                showMoreBtn.addEventListener('click', function() {
-                    // Show all items in the list
-                    ol.classList.add('show-all');
+                showMorePublicationsBtn.addEventListener('click', function() {
+                    // Show all items in the publications list
+                    publicationsOl.classList.add('show-all');
 
                     // Swap visibility of buttons
-                    showMoreBtn.style.display = 'none';
-                    showLessBtn.style.display = 'inline-block';
+                    showMorePublicationsBtn.style.display = 'none';
+                    showLessPublicationsBtn.style.display = 'inline-block';
                 });
 
-                showLessBtn.addEventListener('click', function() {
-                    // Hide extra items in the list
-                    ol.classList.remove('show-all');
+                showLessPublicationsBtn.addEventListener('click', function() {
+                    // Hide extra items in the publications list
+                    publicationsOl.classList.remove('show-all');
 
                     // Swap visibility of buttons
-                    showLessBtn.style.display = 'none';
-                    showMoreBtn.style.display = 'inline-block';
+                    showLessPublicationsBtn.style.display = 'none';
+                    showMorePublicationsBtn.style.display = 'inline-block';
+                });
+
+                // Courses section
+                let coursesUl = document.querySelector('#courses ul');
+                let showMoreCoursesBtn = document.getElementById('showMoreCoursesBtn');
+                let showLessCoursesBtn = document.getElementById('showLessCoursesBtn');
+
+                showMoreCoursesBtn.addEventListener('click', function() {
+                    // Show all items in the courses list
+                    coursesUl.classList.add('show-all');
+
+                    // Swap visibility of buttons
+                    showMoreCoursesBtn.style.display = 'none';
+                    showLessCoursesBtn.style.display = 'inline-block';
+                });
+
+                showLessCoursesBtn.addEventListener('click', function() {
+                    // Hide extra items in the courses list
+                    coursesUl.classList.remove('show-all');
+
+                    // Swap visibility of buttons
+                    showLessCoursesBtn.style.display = 'none';
+                    showMoreCoursesBtn.style.display = 'inline-block';
                 });
             });
-
         </script>
     </head>
     <body>
@@ -75,7 +98,7 @@
                         <li>Grounding language models in tools (tool agents) and multimodal data (RAG)</li>
                         <li>Pluralistic value alignment and steering for language models</li>
                         <li>Knowledge representation and editing in language models</li>
-                        <li>Dialogue systems for persuasion, emotional support, education, and QA</li>
+                        <li>Dialogue systems for persuasion, emotional support, education, and medical QA</li>
                         <li>Persuasive image generation</li>
                         <li>Other NLP topics</li>
                     </ul>
@@ -84,15 +107,19 @@
                 <div id="courses" class="section">
                     <h2>Courses</h2>
                     <ul>
-                        <li>Spring 2025: <a href="files/syllabus-convai.pdf">Conversational AI</a>, <a href="">The Inner Workings of Language Models: Interpretation and Intervention</a>, <a href="files/syllabus-computing1.pdf">Computing for Data Science 1</a></li>
-                        <!--<li>Fall 2024: <a href="files/syllabus-convai.pdf">Conversational AI</a>, <a href="files/syllabus-computing1.pdf">Computing for Data Science Applications</a></li>-->
+                        <li class="courses"><b>Spring 2025:</b> <a href="files/syllabus-convai.pdf">Conversational AI</a>, <a href="">Inner Workings of Language Models: Interpretation and Intervention</a>, <a href="files/syllabus-computing1.pdf">Computing for Data Science 1</a></li>
+                        <li class="courses"><b>Fall 2024:</b> <a href="files/syllabus-convai.pdf">Conversational AI</a>, <a href="files/syllabus-computing1.pdf">Computing for Data Science Applications</a></li>
+                        <li class="courses"><b>Spring 2024:</b> Computing for Data Science 1</li>
+                        <li class="courses"><b>Fall 2024:</b> Conversational AI</li>
                     </ul>
+                    <button id="showMoreCoursesBtn">Show More</button>
+                    <button id="showLessCoursesBtn" style="display: none;">Show Less</button>
                 </div>
  
                 <div id="selected_publications" class="section">
                     <h2>Publications</h2>
                     <ol>
-                        <li class="paper select"><p class="paper_title">Model-based Preference Optimization in Abstractive Summarization without Human Feedback <span class="link"></span></p>
+                        <li class="paper select"><p class="paper_title">Model-based Preference Optimization in Abstractive Summarization without Human Feedback <span class="link">[<a href="https://aclanthology.org/2024.emnlp-main.1048/">Paper</a>]</span></p>
                             <p class="paper_authors">Jaepill choi, Kyubyung Chae, Jiwoo Song, Yohan Jo, Taesup Kim</p>
                             <p class="paper_venue">[EMNLP] Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing, 2024</p></li>
 
@@ -241,8 +268,8 @@
                             <p class="paper_authors">Il-Chul Moon, Dongwoo Kim, Yohan Jo, Alice Oh</p>
                             <p class="paper_venue">[SocialCom] Proceedings of the 2010 IEEE Second International Conference on Social Computing, 2010</p></li>
                     </ol>
-                    <button id="showMoreBtn">Show More</button>
-                    <button id="showLessBtn" style="display: none;">Show Less</button>
+                    <button id="showMorePublicationsBtn">Show More</button>
+                    <button id="showLessPublicationsBtn" style="display: none;">Show Less</button>
                 </div>
 
 
@@ -357,9 +384,7 @@
                         <li>CMU &mdash; Guest Lecture for "Intro to NLP" Course <span class="date">(Apr 2020 &amp; Nov 2019)</span></li>
                     </ul>
                 </div>
-                -->
  
-
                 <div id="awards" class="section">
                     <h2>Awards</h2>
                     <ul>
@@ -375,7 +400,6 @@
                     </ul>
                 </div>
 
-                <!--
                 <div id="teaching_experience" class="section">
                     <h2>Teaching</h2>
                     <ul>
