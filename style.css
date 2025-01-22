@@ -95,27 +95,27 @@ ol li {
 }
 
 /* Show More, Show Less */
-li.paper {
+#publications li.paper {
     display: none;
 }
 
-li.paper:nth-child(-n+9) {
+#publications li.paper:nth-child(-n+9) {
     display: list-item;
 }
 
-.show-all li.paper {
+#publications .show-all li.paper {
     display: list-item;
 }
 
-li.courses {
+#courses li.courses {
     display: none;
 }
 
-li.courses:nth-child(-n+1) {
+#courses li.courses:nth-child(-n+1) {
     display: list-item;
 }
 
-.show-all li.courses {
+#courses .show-all li.courses {
     display: list-item;
 }
 /*-------------------------*/
