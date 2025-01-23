@@ -99,11 +99,17 @@ ol li {
     display: none;
 }
 
+/*
 #publications li.paper:nth-child(-n+9) {
     display: list-item;
 }
+*/
 
 #publications .show-all li.paper {
+    display: list-item;
+}
+
+#publications li.select {
     display: list-item;
 }
 
@@ -247,24 +253,6 @@ p.bigskip {
 	color: #333;
 	vertical-align: top;
 }
-
-/*
-#toggle_pub_button {
-    border: none;
-    background-color: none;
-    color: royalblue;
-}
-*/
-
-/*
-.paper {
-    display: none;
-}
-
-.paper.select {
-    display: block;
-}
-*/
 
 .paper_title {
 	/*font-family: 'SF Pro', 'Roboto', sans-serif;*/
