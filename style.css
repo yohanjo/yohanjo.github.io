@@ -22,7 +22,6 @@ a:visited {
 }
 
 h1 {
-	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
 	font-size: 26pt;
 }
@@ -125,10 +124,6 @@ ol li {
     display: list-item;
 }
 /*-------------------------*/
-
-.korean {
-	font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif;
-}
 
 #wrap {
 	max-width: 860px;
