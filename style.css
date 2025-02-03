@@ -405,3 +405,19 @@ iframe {
     display: none;
     z-index: 20;
 }
+
+.student_list {
+    list-style-type: none;
+}
+    
+.member_name, .alum_name {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: bold;
+    width: 130px;
+    text-align: right;
+}
+
+.alum_name {
+    width: 220px;
+}
