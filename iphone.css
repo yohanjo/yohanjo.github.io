@@ -1,76 +1,7 @@
-body {
-	margin: 0;
-	padding: 0;
-	font-size: 11pt;
-}
 
 
-h1 {
-	margin-top: 0;
-	padding: 0;
-}
-
-h2 {
-	font-variant: small-caps;
-	font-size: 19pt;
-}
-
-ol {
-    margin-left: -10px;
-    padding-left: 0px;
-    list-style: none;
-}
-
-ol li {
-	margin-bottom: 10px;
-    list-style-position: inside;
-}
 
 
-#wrap {
-	margin: 10px;
-}
 
 
-#profile {
-    display: table;
-    width: 100%;
-	font-size: 12pt;
-	text-align: center;
-}
-
-#photo {
-    display: table-cell;
-    margin-right: 5px;
-    padding: 0px;
-	width: 25%;
-    margin: auto;
-}
-
-#photo img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-	border-radius: 0%;
-}
-
-#short_intro {
-    display: table-cell;
-    vertical-align: top;
-    padding-top: 15px;
-}
-
-
-#footer {
-	text-align: right;
-	color: gray;
-}
-
-p.bigskip {
-	margin: 20px 0;
-}
-
-.section {
-	margin-bottom: 20px;
-}
 

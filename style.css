@@ -32,7 +32,6 @@ h2 {
 	font-size: 20pt;
 	font-weight: 300;
     margin-top: 0;
-	/*font-variant: small-caps;*/
 }
 
 h3 {
@@ -89,6 +88,16 @@ ol li {
 	margin-bottom: 10px;
 }
 
+
+@media screen and (max-width: 767px) {
+    ol {
+        margin-left: -10px;
+        padding-left: 0px;
+        list-style: none;
+    }
+}
+
+
 /* Show More, Show Less */
 #publications li.paper {
     display: none;
@@ -128,11 +137,21 @@ ol li {
 	margin-right: auto;
 }
 
+
+@media screen and (max-width: 767px) {
+    #wrap {
+        margin: 10px;
+    }
+}
+
+
+/* Profile section */
 #profile {
     display: table;
     width: 100%;
     margin-bottom: 20px;
 	font-size: 12pt;
+    padding-top: 25px;
 }
 
 #profile_left_margin {
@@ -146,7 +165,6 @@ ol li {
     width: 50%;
     min-width: 250px;
     vertical-align: top;
-    padding-top: 25px;
 }
 
 #photo {
@@ -165,6 +183,16 @@ ol li {
     display: table-cell;
     width: auto; 
 }
+
+@media screen and (max-width: 767px) {
+    #profile_left_margin, #photo, #profile_right_margin {
+        display: none;
+        width: 0;
+    }
+}
+
+
+
 
 .clear {
 	clear: both;
@@ -421,11 +449,11 @@ iframe {
 
 @media screen and (max-width: 767px) {
     .student_list {
-        list-style-type: disc;
+        padding: 0 10px;
     }
 
     .member_name, .alum_name {
-        display: inline;
+        display: block;
         text-align: left;
     }
 }
