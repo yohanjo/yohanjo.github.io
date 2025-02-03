@@ -409,9 +409,9 @@ iframe {
     
 .member_name, .alum_name {
     display: inline-block;
+    width: 130px;
     margin-right: 20px;
     font-weight: bold;
-    width: 130px;
     text-align: right;
 }
 
@@ -420,13 +420,12 @@ iframe {
 }
 
 @media screen and (max-width: 767px) {
+    .student_list {
+        list-style-type: disc;
+    }
+
     .member_name, .alum_name {
-        display: inline-block;
-        margin-right: 20px;
-        font-weight: bold;
+        display: inline;
+        text-align: left;
     }
-
-    .alum_name {
-    }
-
 }
