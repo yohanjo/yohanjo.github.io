@@ -147,20 +147,25 @@ ol li {
 
 /* Profile section */
 #profile {
+    border-radius: 15px;
     display: table;
     width: 100%;
     margin-bottom: 20px;
 	font-size: 12pt;
-    padding-top: 25px;
+    padding-top: 10px;
+    background-color: #EFDEC5;
+    background-image: linear-gradient(110deg, #FFEED5, #EFDEC5, #EFDEC5);
 }
 
 #profile_left_margin {
     display: table-cell;
-    width: 10%; 
+    width: 25%;
 }
 
 #short_intro {
     display: table-cell;
+    padding-top: 10px;
+    padding-bottom: 10px;
 	text-align: center;
     width: 50%;
     min-width: 250px;
@@ -171,12 +176,12 @@ ol li {
     display: table-cell;
     width: 30%;
     text-align: left;
+    vertical-align: bottom;
 }
 
 #photo img {
-	border-radius: 0%;
-	height: 190px;
-    width: auto;
+	border-radius: 15px;
+	height: 220px;
 }
 
 #profile_right_margin {
