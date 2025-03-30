@@ -1,7 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-size: 12pt;
+	font-size: 14pt;
 	font-family: 'Helvetica', 'Arial', sans-serif;
 	line-height: 150%;
 }
@@ -17,19 +17,24 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	text-decoration: underline;
+    color: #ee4443;
+}
+
 a:visited {
 	/*color: darkblue;*/
 }
 
 h1 {
 	font-weight: 400;
-	font-size: 26pt;
+	font-size: 30pt;
 }
 
 h2 {
 	font-family: 'Lato', sans-serif;
 	color: #666;
-	font-size: 20pt;
+	font-size: 24pt;
 	font-weight: 300;
     margin-top: 0;
 }
@@ -40,12 +45,6 @@ h3 {
 
 h4 {
     margin: 0px 0 10px 0;
-}
-
-
-a:hover {
-	text-decoration: underline;
-    color: #ee4443;
 }
 
 ul {
@@ -147,11 +146,10 @@ ol li {
 
 /* Profile section */
 #profile {
-    border-radius: 15px;
+    border-radius: 12px;
     display: table;
     width: 100%;
     margin-bottom: 20px;
-	font-size: 12pt;
     padding-top: 10px;
     background-color: #EFDEC5;
     background-image: linear-gradient(110deg, #FFEED5, #EFDEC5, #EFDEC5);
@@ -180,7 +178,7 @@ ol li {
 }
 
 #photo img {
-	border-radius: 15px;
+	border-radius: 12px;
 	height: 220px;
 }
 
@@ -272,7 +270,7 @@ p.bigskip {
 
 .date {
 	margin-left: 5px;
-	font-size: 10pt;
+	font-size: 0.8em;
 	font-weight: 300;
 	color: #333;
 	vertical-align: top;
@@ -287,7 +285,7 @@ p.bigskip {
 .paper_title .link {
 	color: #666;
 	font-weight: 300;
-	font-size: 10pt;
+	font-size: 0.8em;
 }
 
 .best_paper {
@@ -436,20 +434,33 @@ iframe {
 }
 
 .student_list {
-    margin-bottom: 20px;
-    list-style-type: none;
-}
-    
-.member_name, .alum_name {
-    display: inline-block;
-    width: 130px;
-    margin-right: 20px;
-    font-weight: bold;
-    text-align: right;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
 }
 
+.student_row {
+  display: grid;
+  gap: 1.5em;
+  align-items: start;
+}
+
+.student_row:has(.member_name) {
+    grid-template-columns: 200px 1fr;
+}
+
+.student_row:has(.alum_name) {
+    grid-template-columns: 260px 1fr;
+}
+
+.member_name,
 .alum_name {
-    width: 220px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.member_affiliation {
+  word-wrap: break-word; /* ensures long text wraps nicely */
 }
 
 @media screen and (max-width: 767px) {
@@ -457,8 +468,18 @@ iframe {
         padding: 0 10px;
     }
 
+    .student_row {
+        display: block;
+    }
+
     .member_name, .alum_name {
         display: block;
         text-align: left;
     }
+
+    .member_affiliation {
+        display: block;
+        margin-left: 20px;
+    }
 }
+
