@@ -116,17 +116,62 @@ ol li {
     display: list-item;
 }
 
-#courses li.courses {
+#courses .course_list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 10px;
+}
+
+#courses li.course_list_item {
     display: none;
 }
 
-#courses li.courses:nth-child(-n+1) {
+#courses li.course_list_item:nth-child(-n+1) {
     display: list-item;
 }
 
-#courses .show-all li.courses {
+#courses .show-all li.course_list_item {
     display: list-item;
 }
+
+.courses_row {
+    display: grid;
+    gap: 1.5em;
+    align-items: start;
+    grid-template-columns: 120px 1fr;
+}
+
+.courses_row .semester {
+  font-weight: bold;
+}
+
+.courses_row .course_names {
+  word-wrap: break-word; /* ensures long text wraps nicely */
+}
+
+@media screen and (max-width: 767px) {
+    .course_list {
+        padding: 0 10px;
+    }
+
+    .courses_row {
+        display: block;
+    }
+
+    .courses_row .semester {
+        display: block;
+    }
+
+    .courses_row .course_names {
+        display: block;
+        margin-left: 20px;
+    }
+}
+
+
+
+
+
 /*-------------------------*/
 
 #wrap {
