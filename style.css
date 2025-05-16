@@ -532,3 +532,9 @@ iframe {
     margin-right: 10px;
     font-weight: bold;
 }
+
+.superscript {
+    position: relative;
+    font-size: 80%;
+    top: -0.5em;
+}
