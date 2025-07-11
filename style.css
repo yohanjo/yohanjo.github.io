@@ -126,7 +126,7 @@ ol li {
     display: none;
 }
 
-#courses li.course_list_item:nth-child(-n+1) {
+#courses li.course_list_item:nth-child(-n+2) {
     display: list-item;
 }
 
