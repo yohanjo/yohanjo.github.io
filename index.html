@@ -70,6 +70,72 @@
                     showMoreCoursesBtn.style.display = 'inline-block';
                 });
             });
+
+            document.addEventListener('DOMContentLoaded', function () {
+
+                const slides = document.querySelectorAll('.slide');
+                const dotsContainer = document.getElementById('dots-container');
+                const thumbnailPreview = document.getElementById('thumbnail-preview');
+                const thumbnailImg = document.getElementById('thumbnail-img');
+                let currentIndex = 0;
+
+
+                // Initialize dots
+                slides.forEach((slide, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('dot');
+                    dot.dataset.index = index;
+                    dot.addEventListener('click', () => moveToSlide(index));
+                    dot.addEventListener('mouseenter', () => showThumbnail(index));
+                    dot.addEventListener('mouseleave', hideThumbnail);
+                    dotsContainer.appendChild(dot);
+                });
+
+                function updateActiveDot() {
+                    document.querySelectorAll('.dot').forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                function moveSlide(direction) {
+                    currentIndex = (currentIndex + direction + slides.length) % slides.length;
+                    updateSlidePosition();
+                }
+
+                function moveToSlide(index) {
+                    currentIndex = index;
+                    updateSlidePosition();
+                }
+
+                function updateSlidePosition() {
+                    const slidesElement = document.querySelector('.slides');
+                    slidesElement.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    updateActiveDot();
+                }
+
+                function showThumbnail(index) {
+                    if (window.innerWidth <= 768) {
+                        return;
+                    }
+                    const slide = slides[index];
+                    const img = slide.querySelector('img');
+                    thumbnailImg.src = img.src;
+                    thumbnailPreview.style.display = 'block';
+                }
+
+                function hideThumbnail() {
+                    thumbnailPreview.style.display = 'none';
+                }
+
+                // Set the first dot as active on page load
+                updateActiveDot();
+
+                window.moveSlide = moveSlide;
+                window.moveToSlide = moveToSlide;
+                window.showThumbnail = showThumbnail;
+                window.hideThumbnail = hideThumbnail;
+            });
+ 
         </script>
     </head>
     <body>
@@ -81,7 +147,7 @@
                     <p>Assistant Professor</p>
                     <p><a href="https://gsds.snu.ac.kr/">Graduate School of Data Science<br />Seoul National University</a></p>
                     <p>yohan.jo&#64;snu.ac.kr</p>
-                    <p style="margin-top: 20px;"><a href="lab.html">&#x1F466;&#127995;&#x1F467;&#127995; Lab Members and Research Topics</a></p>
+                    <p style="margin-top: 20px;"><b>Lab:</b> ✔️ Research | <a href="lab.html">Members</a></p>
                 </div>
                 <div id="photo">
                     <img src="images/yohanjo_ghibli.png" alt="Yohan Jo" />
@@ -140,6 +206,28 @@
                     </ul>
                     <button id="showMoreCoursesBtn">Show More</button>
                     <button id="showLessCoursesBtn" style="display: none;">Show Less</button>
+                </div>
+
+                <div id="lab_intro" class="section">
+                    <h2>Research Topics</h2>
+                    <div class="slideshow-container">
+                        <div class="slides">
+                            <div class="slide"><img href="slide1" src="images/lab/Slides.001.jpeg" /></div>
+                            <div class="slide"><img href="slide2" src="images/lab/Slides.002.jpeg" /></div>
+                            <div class="slide"><img href="slide3" src="images/lab/Slides.003.jpeg" /></div>
+                            <div class="slide"><img href="slide4" src="images/lab/Slides.004.jpeg" /></div>
+                            <div class="slide"><img href="slide5" src="images/lab/Slides.005.jpeg" /></div>
+                            <div class="slide"><img href="slide6" src="images/lab/Slides.006.jpeg" /></div>
+                            <div class="slide"><img href="slide7" src="images/lab/Slides.007.jpeg" /></div>
+                            <div class="slide"><img href="slide8" src="images/lab/Slides.008.jpeg" /></div>
+                        </div>
+                        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+                        <div class="dots-container" id="dots-container"></div>
+                        <div class="thumbnail-preview" id="thumbnail-preview">
+                            <img src="" alt="Thumbnail Preview" id="thumbnail-img">
+                        </div>
+                    </div>
                 </div>
  
                 <div id="publications" class="section">
@@ -372,35 +460,6 @@
                     </ol>
                 </div>
 
-                <div id="education" class="section">
-                    <h2>Education</h2>
-                    <ul class="nobullet">
-                        <li><b><a href="http://www.cmu.edu">Carnegie Mellon University</a></b></span>
-                        <ul>
-                            <li>Ph.D. in <a href="http://lti.cs.cmu.edu">Language and Information Technologies</a> (Advisor: <a href="https://www.cs.cmu.edu/~hovy/">Prof. Eduard Hovy</a>) <span class="date">(2021)</span></li>
-                            <li>M.S. in <a href="http://lti.cs.cmu.edu">Language Technologies</a> (Advisor: <a href="http://www.cs.cmu.edu/~cprose/">Prof. Carolyn P. Rosé</a>)  <span class="date">(2016)</span></li>
-                        </ul>
-                        </li>
-                        <li><b><a href="http://www.kaist.edu">KAIST</a></b></span>
-                        <ul>
-                            <li>M.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a> (Advisor: <a href="https://aliceoh9.github.io/">Prof. Alice Oh</a>)  <span class="date">(2011)</span></li>
-                            <li>B.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a>  <span class="date">(2009)</span></li>
-                        </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="work_experience" class="section">
-                    <h2>Work</h2>
-                    <ul>
-                        <li><span class="work"><a href="https://gsds.snu.ac.kr/">Seoul National University</a></span> Assistant Professor <span class="date">(Sept 2023&ndash;Present)</span> </li>
-                        <li><span class="work"><a href="https://www.amazon.science/research-areas/conversational-ai-natural-language-processing">Amazon.com, Inc.</a></span> Applied Scientist <span class="date">(Aug 2021&ndash;Aug 2023)</span> </li>
-                        <li><span class="work"><a href="https://machinelearning.apple.com/">Apple Inc.</a></span> ML Research &amp; NLP Intern <span class="date">(June&ndash;Aug 2020)</span> </li>
-                        <li><span class="work"><a href="http://www.ets.org">Educational Testing Service (ETS)</a></span> Research &amp; Development Intern <span class="date">(June&ndash;July 2017)</span> </li>
-                        <li><span class="work"><a href="https://www.etri.re.kr">Electronics and Telecommunications Research Institute (ETRI)</a></span> Researcher <span class="date">(Feb 2011&ndash;July 2014)</span> </li>
-                        <li><span class="work">MirageWorks</span> Software Engineering Intern <span class="date">(June&ndash;Aug 2008)</span> </li>
-                    </ul>
-                </div>
 
                 <!--
                 <div id="services" class="section">

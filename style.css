@@ -215,6 +215,11 @@ ol li {
     vertical-align: top;
 }
 
+#short_intro p {
+    margin-bottom: 8px;
+    line-height: 1.1em;
+}
+
 #photo {
     display: table-cell;
     width: 30%;
@@ -537,4 +542,24 @@ iframe {
     position: relative;
     font-size: 80%;
     top: -0.5em;
+}
+
+#yohan_bio {
+    margin: 10px 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    
+}
+
+.yohan_bio_section ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+    
+
+#yohan_bio h3 {
+    margin-top: 0px;
+    font-weight: normal;
 }
