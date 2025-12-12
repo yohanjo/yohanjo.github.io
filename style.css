@@ -335,9 +335,35 @@ p.bigskip {
 }
 
 .paper_title .link {
+    margin-left: 5px;
+/*
 	color: #666;
 	font-weight: 300;
 	font-size: 0.8em;
+*/
+}
+
+.paper_title .link a {
+  /* Make the link act like a box */
+  display: inline-block;
+
+  /* Button styling */
+  background-color: #bbb; /* Example Green color */
+  color: white;
+  text-decoration: none;      /* Remove underline */
+  padding: 0px 6px;
+  margin-left: -0.1em;
+  border-radius: 4px;         /* Slightly rounded corners */
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  /* Positioning */
+  vertical-align: top; /* Keeps it aligned with the text line */
+  transition: background-color 0.2s;
+}
+
+.paper_title .link a:hover {
+  background-color: #ee4443; 
 }
 
 .best_paper {
@@ -565,3 +591,4 @@ iframe {
     margin-top: 0px;
     font-weight: normal;
 }
+
