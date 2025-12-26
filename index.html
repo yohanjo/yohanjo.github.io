@@ -29,56 +29,51 @@
                 let showMorePublicationsBtn = document.getElementById('showMorePublicationsBtn');
                 let showLessPublicationsBtn = document.getElementById('showLessPublicationsBtn');
 
-                showMorePublicationsBtn.addEventListener('click', function() {
-                    // Show all items in the publications list
-                    publicationsOl.classList.add('show-all');
+                if(showMorePublicationsBtn) {
+                    showMorePublicationsBtn.addEventListener('click', function() {
+                        publicationsOl.classList.add('show-all');
+                        showMorePublicationsBtn.style.display = 'none';
+                        showLessPublicationsBtn.style.display = 'inline-block';
+                    });
+                }
 
-                    // Swap visibility of buttons
-                    showMorePublicationsBtn.style.display = 'none';
-                    showLessPublicationsBtn.style.display = 'inline-block';
-                });
-
-                showLessPublicationsBtn.addEventListener('click', function() {
-                    // Hide extra items in the publications list
-                    publicationsOl.classList.remove('show-all');
-
-                    // Swap visibility of buttons
-                    showLessPublicationsBtn.style.display = 'none';
-                    showMorePublicationsBtn.style.display = 'inline-block';
-                });
+                if(showLessPublicationsBtn) {
+                    showLessPublicationsBtn.addEventListener('click', function() {
+                        publicationsOl.classList.remove('show-all');
+                        showLessPublicationsBtn.style.display = 'none';
+                        showMorePublicationsBtn.style.display = 'inline-block';
+                    });
+                }
 
                 // Courses section
                 let coursesUl = document.querySelector('#courses ul');
                 let showMoreCoursesBtn = document.getElementById('showMoreCoursesBtn');
                 let showLessCoursesBtn = document.getElementById('showLessCoursesBtn');
 
-                showMoreCoursesBtn.addEventListener('click', function() {
-                    // Show all items in the courses list
-                    coursesUl.classList.add('show-all');
+                if(showMoreCoursesBtn) {
+                    showMoreCoursesBtn.addEventListener('click', function() {
+                        coursesUl.classList.add('show-all');
+                        showMoreCoursesBtn.style.display = 'none';
+                        showLessCoursesBtn.style.display = 'inline-block';
+                    });
+                }
 
-                    // Swap visibility of buttons
-                    showMoreCoursesBtn.style.display = 'none';
-                    showLessCoursesBtn.style.display = 'inline-block';
-                });
-
-                showLessCoursesBtn.addEventListener('click', function() {
-                    // Hide extra items in the courses list
-                    coursesUl.classList.remove('show-all');
-
-                    // Swap visibility of buttons
-                    showLessCoursesBtn.style.display = 'none';
-                    showMoreCoursesBtn.style.display = 'inline-block';
-                });
+                if(showLessCoursesBtn) {
+                    showLessCoursesBtn.addEventListener('click', function() {
+                        coursesUl.classList.remove('show-all');
+                        showLessCoursesBtn.style.display = 'none';
+                        showMoreCoursesBtn.style.display = 'inline-block';
+                    });
+                }
             });
 
             document.addEventListener('DOMContentLoaded', function () {
 
                 const slides = document.querySelectorAll('.slide');
                 const dotsContainer = document.getElementById('dots-container');
-                const thumbnailPreview = document.getElementById('thumbnail-preview');
-                const thumbnailImg = document.getElementById('thumbnail-img');
+                // 썸네일 관련 변수 제거 (HTML 슬라이드에는 적용 불가)
+                
                 let currentIndex = 0;
-
 
                 // Initialize dots
                 slides.forEach((slide, index) => {
@@ -86,8 +81,7 @@
                     dot.classList.add('dot');
                     dot.dataset.index = index;
                     dot.addEventListener('click', () => moveToSlide(index));
-                    dot.addEventListener('mouseenter', () => showThumbnail(index));
-                    dot.addEventListener('mouseleave', hideThumbnail);
+                    // 썸네일 이벤트 리스너 제거
                     dotsContainer.appendChild(dot);
                 });
 
@@ -113,29 +107,14 @@
                     updateActiveDot();
                 }
 
-                function showThumbnail(index) {
-                    if (window.innerWidth <= 768) {
-                        return;
-                    }
-                    const slide = slides[index];
-                    const img = slide.querySelector('img');
-                    thumbnailImg.src = img.src;
-                    thumbnailPreview.style.display = 'block';
-                }
-
-                function hideThumbnail() {
-                    thumbnailPreview.style.display = 'none';
-                }
+                // 썸네일 관련 함수 제거 (showThumbnail, hideThumbnail)
 
                 // Set the first dot as active on page load
                 updateActiveDot();
 
                 window.moveSlide = moveSlide;
                 window.moveToSlide = moveToSlide;
-                window.showThumbnail = showThumbnail;
-                window.hideThumbnail = hideThumbnail;
             });
- 
         </script>
     </head>
     <body>
@@ -157,14 +136,96 @@
             <div id="main">
                 <div id="research_interests" class="section">
                     <p>If you're interested in the following research topics and are considering graduate studies at GSDS, I encourage you to intern at my lab (ideally for more than one semester prior to your graduate application). Please email me your transcript, CV, and research interests.</p>
-                    <ul style="margin-left: 15px;">
-                        <li><strong>Geometry & Internal Mechanisms:</strong> Reverse-engineering the neural circuits of foundation language models (e.g., autoregressive, diffusion, VLA) and model surgery for interpretability and behavior control</li>
-                        <li><strong>Cognitive Reasoning:</strong> Enhancing logical and visual reasoning through reinforcement learning and simulations</li>
-                        <li><strong>Agentic Systems:</strong> Developing autonomous and human-collaborative agents that leverage physical devices, software ecosystems, and multimodal data</li>
-                        <li><strong>Pluralistic Alignment:</strong> Aligning AI agents with diverse and conflicting human values (e.g., helpfulness, safety, efficiency, hedonism) through steering and algorithmic frameworks</li>
-                        <li><strong>Other AI Topics:</strong> Open to any creative ideas across modalities and applications</li>
-                    </ul>
                     <p>For those interested in an internship or co-advising for <a href="https://gsds.snu.ac.kr/integrated/">융합전공</a>, I recommend taking my <a href="files/syllabus/convai.pdf">"Large Language Models and Conversational AI (거대언어모델과 대화형 인공지능)"</a> course.</p>
+                    <div class="slideshow-container">
+                        <div class="slides">
+                            <div class="slide">
+                                <div class="slide-inner">
+                                    <div class="slide-text-content">
+                                        <!--<h2 class="slide-title" style="margin-top: -20px; margin-bottom: 10px;">Research Topics</h2>-->
+                                        <ul class="slide-list">
+                                            <li><strong>Geometry & Internal Mechanisms:</strong> Reverse-engineering the neural circuits of foundation language models (e.g., autoregressive, diffusion, VLA) and model surgery for interpretability and behavior control</li>
+                                            <li><strong>Cognitive Reasoning:</strong> Enhancing logical and visual reasoning through reinforcement learning and simulations</li>
+                                            <li><strong>Agentic Systems:</strong> Developing autonomous and human-collaborative agents that leverage physical devices, software ecosystems, and multimodal data</li>
+                                            <li><strong>Pluralistic Alignment:</strong> Aligning AI agents with diverse and conflicting human values (e.g., helpfulness, safety, efficiency, hedonism) via steering and algorithmic frameworks</li>
+                                            <li><strong>Other AI Topics:</strong> Open to any creative ideas across modalities and applications</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-inner">
+                                    <img src="images/lab/Slides.001.jpeg" alt="Research Topics" />
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-inner">
+                                    <div class="slide-text-content">
+                                        <h2 class="slide-title">Cognitive Reasoning</h2>
+                                        <ul class="slide-list">
+                                            <li><strong>Enhancing the logical and visual reasoning of AI agents</strong></li>
+                                            <li>Application to mathematics, medicine, education, and persuasion</li>
+                                            <li>Reinforcement learning for visual language models and diffusion language models</li>
+                                            <li>Enhancing reasoning efficacy and efficiency</li>
+                                        </ul>
+                                    </div>
+                                    <div class="slide-visual"></div>
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-inner">
+                                    <div class="slide-text-content">
+                                        <h2 class="slide-title">Agentic Systems</h2>
+                                        <ul class="slide-list">
+                                            <li><strong>Developing autonomous and collaborative agents that leverage physical devices, software ecosystems, and multimodal data</strong></li>
+                                            <li>Agents collaborating with smart devices and other agents</li>
+                                            <li>Social intelligence for physical AI co-habiting with humans</li>
+                                            <li>Training via reinforcement learning and simulations</li>
+                                        </ul>
+                                    </div>
+                                    <div class="slide-visual variant-2"></div>
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-inner">
+                                    <div class="slide-text-content">
+                                        <h2 class="slide-title">Pluralistic Value Alignment</h2>
+                                        <ul class="slide-list">
+                                            <li><strong>Aligning AI agents with diverse and conflicting values (e.g., helpfulness, safety, efficiency, hedonism)</strong></li>
+                                            <li>Training and steering via multi-objective reinforcement learning and Pareto optimization</li>
+                                            <li>Application and expansion of prospect theory and social choice theory</li>
+                                            <li>Psychometrics for AI agents</li>
+                                        </ul>
+                                    </div>
+                                    <div class="slide-visual variant-3"></div>
+                                </div>
+                            </div>
+
+                            <div class="slide">
+                                <div class="slide-inner">
+                                    <div class="slide-text-content">
+                                        <h2 class="slide-title">Geometry and Internal Mechanisms</h2>
+                                        <ul class="slide-list">
+                                            <li><strong>Reverse-engineering the neural circuits of foundation language models</strong>, such as diffusion language models and vision-language-action models</li>
+                                            <li><strong>Model surgery</strong> for editing the parametric knowledge and psychological characteristics of agents</li>
+                                        </ul>
+                                    </div>
+                                    <div class="slide-visual variant-4"></div>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-inner">
+                                    <img src="images/lab/Slides.007.jpeg" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
+                        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
+                        <div class="dots-container" id="dots-container"></div>
+                    </div>
                 </div>
 
                 <div id="courses" class="section">
@@ -194,69 +255,8 @@
                              2024-1)
                         </li>
                     </ul>
-
-<!--
-                    <ul class="course_list">
-                        <li class="course_list_item">
-                            <div class="courses_row">
-                                <span class="semester">Fall 2025</span>
-                                <span class="course_names">
-                                    - <a href="files/syllabus/2025-2-convai.pdf">Conversational AI</a><br />
-                                    - <a href="files/syllabus/2025-2-multimodal_generative_diffusion_models.pdf">Multimodal Generative Diffusion Models</a><br />
-                                    - <a href="files/syllabus/2025-2-computing1.pdf">Computing for Data Science 1</a>
-                            </div>
-                        </li>
-                        <li class="course_list_item">
-                            <div class="courses_row">
-                                <span class="semester">Spring 2025</span>
-                                <span class="course_names">- <a href="files/syllabus/2025-1-convai.pdf">Conversational AI</a><br />- <a href="files/syllabus/2025-1-inner_workings_of_lms.pdf">Inner Workings of Language Models: Interpretation and Intervention</a><br />- <a href="files/syllabus/2025-1-computing1.pdf">Computing for Data Science Applications</a>
-                            </div>
-                        </li>
-                        <li class="course_list_item">
-                            <div class="courses_row">
-                                <span class="semester">Fall 2024</span>
-                                <span class="course_names">- <a href="files/syllabus/2024-2-convai.pdf">Conversational AI</a><br />- <a href="files/syllabus/2024-2-computing1.pdf">Computing for Data Science Applications</a>
-                            </div>
-                        </li>
-                        <li class="course_list_item">
-                            <div class="courses_row">
-                                <span class="semester">Spring 2024</span>
-                                <span class="course_names">- Computing for Data Science 1</span>
-                            </div>
-                        </li>
-                        <li class="course_list_item">
-                            <div class="courses_row">
-                                <span class="semester">Fall 2023</span>
-                                <span class="course_names">- Conversational AI</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <button id="showMoreCoursesBtn">Show More</button>
-                    <button id="showLessCoursesBtn" style="display: none;">Show Less</button>
--->
                 </div>
 
-                <div id="lab_intro" class="section">
-                    <h2>Research Topics</h2>
-                    <div class="slideshow-container">
-                        <div class="slides">
-                            <div class="slide"><img href="slide1" src="images/lab/Slides.001.jpeg" /></div>
-                            <div class="slide"><img href="slide2" src="images/lab/Slides.002.jpeg" /></div>
-                            <div class="slide"><img href="slide3" src="images/lab/Slides.003.jpeg" /></div>
-                            <div class="slide"><img href="slide4" src="images/lab/Slides.004.jpeg" /></div>
-                            <div class="slide"><img href="slide5" src="images/lab/Slides.005.jpeg" /></div>
-                            <div class="slide"><img href="slide6" src="images/lab/Slides.006.jpeg" /></div>
-                            <div class="slide"><img href="slide7" src="images/lab/Slides.007.jpeg" /></div>
-                        </div>
-                        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
-                        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
-                        <div class="dots-container" id="dots-container"></div>
-                        <div class="thumbnail-preview" id="thumbnail-preview">
-                            <img src="" alt="Thumbnail Preview" id="thumbnail-img">
-                        </div>
-                    </div>
-                </div>
- 
                 <div id="publications" class="section">
                     <h2>Publications</h2>
                     <ol>
