@@ -449,7 +449,7 @@ iframe {
 }
 
 .student_row:has(.alum_name) {
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 300px 1fr;
 }
 
 .member_name,
