@@ -534,7 +534,7 @@ iframe {
 
 .slide-inner {
     width: 100%;
-    min-height: 400px; 
+    min-height: 430px; 
     display: flex;
     background-color: #ffffff;
     border: 1px solid #eee;
@@ -546,7 +546,7 @@ iframe {
 .slide-inner img {
     margin: auto;
     width: 100%;
-    max-height: 400px;
+    max-height: 430px;
     object-fit: contain;
 }
 
