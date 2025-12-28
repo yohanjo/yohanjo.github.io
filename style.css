@@ -515,6 +515,10 @@ iframe {
 
 
 /* --- Slideshow ---*/
+:root {
+    --slide-min-height: 430px;
+}
+
 .slideshow-container {
     position: relative;
     margin: 10px auto;
@@ -534,7 +538,7 @@ iframe {
 
 .slide-inner {
     width: 100%;
-    min-height: 430px; 
+    min-height: var(--slide-min-height);
     display: flex;
     background-color: #ffffff;
     border: 1px solid #eee;
@@ -546,7 +550,7 @@ iframe {
 .slide-inner img {
     margin: auto;
     width: 100%;
-    max-height: 430px;
+    max-height: var(--slide-min-height);
     object-fit: contain;
 }
 
