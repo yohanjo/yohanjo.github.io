@@ -200,6 +200,11 @@ ol li {
     padding-top: 10px;
     background-color: #EFDEC5;
     background-image: linear-gradient(110deg, #FFEED5, #EFDEC5, #EFDEC5);
+
+    background-image: url('images/peanuts_christmas.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 120%;
 }
 
 #profile_left_margin {
@@ -209,12 +214,27 @@ ol li {
 
 #short_intro {
     display: table-cell;
+    color: black;
     padding-top: 10px;
     padding-bottom: 10px;
 	text-align: center;
     width: 50%;
     min-width: 250px;
     vertical-align: top;
+}
+
+.blurred {
+    padding: 0 10px;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.blurred_h1 {
+    padding: 0 10px;
+    text-shadow: 0 0 15px #ffc;
+    color: white;
+    background-color: #071A50;
+    border-radius: 6px;
 }
 
 #short_intro p {
