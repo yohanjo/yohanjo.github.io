@@ -225,9 +225,10 @@ ol li {
 }
 
 .blurred {
-    padding: 3px 10px;
+    padding: 2px 2px;
     background-color: white;
     border-radius: 8px;
+    box-shadow: 0 0 5px 5px white;
 }
 
 .blurred_h1 {
@@ -239,7 +240,7 @@ ol li {
 }
 
 #short_intro p {
-    margin: 2px 0;
+    margin: 3px 0;
     line-height: 1.1em;
 }
 
