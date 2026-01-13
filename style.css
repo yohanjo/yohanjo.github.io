@@ -213,6 +213,10 @@ ol li {
     width: 25%;
 }
 
+#profile .check_mark {
+    height: .9em;
+}
+
 #short_intro {
     display: table-cell;
     color: black;
