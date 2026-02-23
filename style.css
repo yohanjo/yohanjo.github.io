@@ -193,19 +193,13 @@ ol li {
 
 /* Profile section */
 #profile {
+    background: linear-gradient(135deg, #fff5f5 0%, #CDDBE0 50%); 
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     display: table;
     width: 100%;
     margin-bottom: 20px;
     padding-top: 10px;
-    /*background-color: #EFDEC5;*/
-    background-color: white;
-    background-image: linear-gradient(110deg, #FFEED5, #EFDEC5, #EFDEC5);
-
-    background-image: url('images/peanuts_christmas.jpg');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: auto 120%;
 }
 
 #profile_left_margin {
@@ -219,28 +213,12 @@ ol li {
 
 #short_intro {
     display: table-cell;
-    color: black;
     padding-top: 10px;
     padding-bottom: 10px;
 	text-align: center;
     width: 50%;
     min-width: 250px;
     vertical-align: top;
-}
-
-.blurred {
-    padding: 2px 2px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 5px 5px white;
-}
-
-.blurred_h1 {
-    padding: 0 10px;
-    text-shadow: 0 0 15px #ffc;
-    color: white;
-    background-color: #071A50;
-    border-radius: 6px;
 }
 
 #short_intro p {
@@ -712,5 +690,4 @@ iframe {
     display: none;
     z-index: 20;
 }
-
 
