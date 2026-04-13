@@ -462,6 +462,15 @@ iframe {
   text-align: right;
 }
 
+.member_name a {
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.member_name a:hover {
+  filter: grayscale(0%);
+}
+
 .member_affiliation {
   word-wrap: break-word; /* ensures long text wraps nicely */
 }
