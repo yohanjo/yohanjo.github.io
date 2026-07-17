@@ -528,10 +528,6 @@ iframe {
 
 
 /* --- Slideshow ---*/
-:root {
-    --slide-min-height: 430px;
-}
-
 .slideshow-container {
     position: relative;
     margin: 10px auto;
@@ -551,7 +547,6 @@ iframe {
 
 .slide-inner {
     width: 100%;
-    min-height: var(--slide-min-height);
     display: flex;
     background-color: #ffffff;
     border: 1px solid #eee;
@@ -563,78 +558,7 @@ iframe {
 .slide-inner img {
     margin: auto;
     width: 100%;
-    max-height: var(--slide-min-height);
     object-fit: contain;
-}
-
-/* 왼쪽 텍스트 영역 */
-.slide-text-content {
-    flex: 1;
-    padding: 40px 70px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    text-align: left; /* 텍스트 좌측 정렬 */
-}
-
-/* 슬라이드 제목 */
-.slide-inner h2.slide-title {
-    color: #3b5a88;
-	font-family: 'Lato', sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    line-height: 1.2;
-}
-
-/* 리스트 스타일 */
-.slide-inner ul.slide-list {
-    list-style-position: outside;
-    padding-left: 25px;
-    margin-top: 0;
-}
-
-.slide-inner ul.slide-list li {
-    color: #333333;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    padding-left: 10px;
-}
-
-/* 불릿 포인트 */
-.slide-inner ul.slide-list li::marker {
-    color: #333;
-    font-size: 20px;
-}
-
-/* 오른쪽 비주얼/이미지 영역 */
-.slide-visual {
-    width: 20%; /* 우측 영역 너비 */
-    flex-shrink: 0;
-    background: linear-gradient(160deg, #2b4570 0%, #1a2640 100%);
-    position: relative;
-}
-
-.slide-visual::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 60%);
-}
-
-/* Agentic Systems (청록/남색 계열) */
-.slide-visual.variant-2 {
-    background: linear-gradient(160deg, #1a2640 0%, #0d1321 100%);
-}
-
-/* Pluralistic Value Alignment (보라/네온 계열) */
-.slide-visual.variant-3 {
-    background: linear-gradient(160deg, #2e1a40 0%, #150d21 100%);
-}
-
-/* Geometry and Internal Mechanisms (Deep Dark Navy/Black) */
-.slide-visual.variant-4 {
-    background: linear-gradient(160deg, #0f172a 0%, #020617 100%);
 }
 
 .arrow {
