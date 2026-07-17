@@ -22,10 +22,6 @@ a:hover {
     color: #ee4443;
 }
 
-a:visited {
-	/*color: darkblue;*/
-}
-
 h1 {
 	font-weight: 400;
 	font-size: 30pt;
@@ -428,14 +424,6 @@ p.bigskip {
     padding-bottom: 56.25%;
 }
 
-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .student_list {
   list-style-type: none;
   padding-left: 0;
@@ -464,7 +452,6 @@ iframe {
 
 .member_name a {
   filter: grayscale(100%);
-  transition: all 0.3s ease;
 }
 
 .member_name a:hover {
