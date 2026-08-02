@@ -310,9 +310,23 @@ p.bigskip {
 	margin: 20px 0;
 }
 
+.news {
+	padding: 20px;
+    margin-bottom: 10px;
+    background-color: #eee;
+    background: linear-gradient(135deg, #c2c9e1 0%, #fff5f5 100%); 
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.news h2 {
+    font-size: 20pt;
+    color: black;
+    font-weight: 500;
+}
+
 .section {
 	padding: 20px 0;
-	/*margin: 20px 0;*/
 	border-bottom: 1px solid #eee;
 }
 
