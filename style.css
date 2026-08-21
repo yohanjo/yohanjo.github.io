@@ -464,11 +464,11 @@ p.bigskip {
   text-align: right;
 }
 
-.member_name a {
+.member_name a, .alum_name a {
   filter: grayscale(100%);
 }
 
-.member_name a:hover {
+.member_name a:hover, .alum_name a:hover {
   filter: grayscale(0%);
 }
 
