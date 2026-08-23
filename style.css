@@ -390,6 +390,13 @@ ol li {
 .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    touch-action: pan-y;
+    cursor: grab;
+}
+
+.slides.dragging {
+    transition: none;
+    cursor: grabbing;
 }
 
 .slide {
@@ -412,6 +419,8 @@ ol li {
     margin: auto;
     width: 100%;
     object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .arrow {
@@ -445,17 +454,32 @@ ol li {
     margin-top: 10px;
 }
 .dot {
-    display: inline-block;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.dot::before {
+    content: '';
+    display: block;
     width: 12px;
     height: 12px;
-    margin: 0 5px;
+    margin: auto;
     background-color: #bbb;
     border-radius: 50%;
-    cursor: pointer;
     transition: background-color 0.3s;
 }
-.dot.active {
+
+.dot.active::before {
     background-color: #333;
+}
+
+.dot:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: 3px;
 }
 
 #workshops li {

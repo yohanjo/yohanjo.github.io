@@ -78,26 +78,34 @@
             });
 
             document.addEventListener('DOMContentLoaded', function () {
-
                 const slides = document.querySelectorAll('.slide');
+                const slidesElement = document.querySelector('.slides');
                 const dotsContainer = document.getElementById('dots-container');
-                // 썸네일 관련 변수 제거 (HTML 슬라이드에는 적용 불가)
-                
                 let currentIndex = 0;
+                let activePointerId = null;
+                let dragStartX = 0;
+                let dragDeltaX = 0;
 
-                // Initialize dots
                 slides.forEach((slide, index) => {
-                    const dot = document.createElement('div');
+                    const dot = document.createElement('button');
+                    dot.type = 'button';
                     dot.classList.add('dot');
                     dot.dataset.index = index;
+                    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                    dot.setAttribute('aria-controls', 'research-slides');
                     dot.addEventListener('click', () => moveToSlide(index));
-                    // 썸네일 이벤트 리스너 제거
                     dotsContainer.appendChild(dot);
                 });
 
                 function updateActiveDot() {
-                    document.querySelectorAll('.dot').forEach((dot, index) => {
-                        dot.classList.toggle('active', index === currentIndex);
+                    dotsContainer.querySelectorAll('.dot').forEach((dot, index) => {
+                        const isActive = index === currentIndex;
+                        dot.classList.toggle('active', isActive);
+                        dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+                    });
+
+                    slides.forEach((slide, index) => {
+                        slide.setAttribute('aria-hidden', index === currentIndex ? 'false' : 'true');
                     });
                 }
 
@@ -112,15 +120,61 @@
                 }
 
                 function updateSlidePosition() {
-                    const slidesElement = document.querySelector('.slides');
+                    slidesElement.classList.remove('dragging');
                     slidesElement.style.transform = `translateX(-${currentIndex * 100}%)`;
                     updateActiveDot();
                 }
 
-                // 썸네일 관련 함수 제거 (showThumbnail, hideThumbnail)
+                function startDragging(event) {
+                    if(event.pointerType === 'mouse' && event.button !== 0) {
+                        return;
+                    }
 
-                // Set the first dot as active on page load
-                updateActiveDot();
+                    activePointerId = event.pointerId;
+                    dragStartX = event.clientX;
+                    dragDeltaX = 0;
+                    slidesElement.classList.add('dragging');
+                    slidesElement.setPointerCapture(event.pointerId);
+                }
+
+                function dragSlides(event) {
+                    if(event.pointerId !== activePointerId) {
+                        return;
+                    }
+
+                    dragDeltaX = event.clientX - dragStartX;
+                    slidesElement.style.transform = `translateX(calc(-${currentIndex * 100}% + ${dragDeltaX}px))`;
+                }
+
+                function stopDragging(event, changeSlide) {
+                    if(event.pointerId !== activePointerId) {
+                        return;
+                    }
+
+                    if(slidesElement.hasPointerCapture(event.pointerId)) {
+                        slidesElement.releasePointerCapture(event.pointerId);
+                    }
+
+                    const dragThreshold = Math.max(40, Math.min(slidesElement.clientWidth * 0.18, 100));
+                    const shouldChangeSlide = changeSlide && Math.abs(dragDeltaX) >= dragThreshold;
+
+                    activePointerId = null;
+                    slidesElement.classList.remove('dragging');
+
+                    if(shouldChangeSlide) {
+                        currentIndex = (currentIndex + (dragDeltaX < 0 ? 1 : -1) + slides.length) % slides.length;
+                    }
+
+                    updateSlidePosition();
+                }
+
+                slidesElement.addEventListener('pointerdown', startDragging);
+                slidesElement.addEventListener('pointermove', dragSlides);
+                slidesElement.addEventListener('pointerup', event => stopDragging(event, true));
+                slidesElement.addEventListener('pointercancel', event => stopDragging(event, false));
+                slidesElement.addEventListener('dragstart', event => event.preventDefault());
+
+                updateSlidePosition();
 
                 window.moveSlide = moveSlide;
                 window.moveToSlide = moveToSlide;
@@ -153,26 +207,26 @@
                 <div id="research_interests" class="section">
                     <h2>Research Topics</h2>
                     <div class="slideshow-container">
-                        <div class="slides">
+                        <div id="research-slides" class="slides" role="group" aria-roledescription="carousel" aria-label="Research topics">
                             <div class="slide">
                                 <div class="slide-inner">
-                                    <img src="images/lab/Slides.001.jpeg" alt="Human-oriented and interactive AI agents across digital, ambient, personal, and robotic worlds through digital agents, smart homes, smart glasses, and companion robots." />
+                                    <img src="images/lab/Slides.001.jpeg" alt="Human-oriented and interactive AI agents across digital, ambient, personal, and robotic worlds through digital agents, smart homes, smart glasses, and companion robots." draggable="false" />
                                 </div>
                             </div>
                             <div class="slide">
                                 <div class="slide-inner">
-                                    <img src="images/lab/Slides.002.jpeg" alt="HOLI Lab’s research topics: value alignment for social intelligence, reasoning for logical intelligence, and interpretability for AI safety and control. Research at Yohan Jo's Lab spans value alignment, user memory and personalization, reasoning for world foundation models and omni-models, interpretability, AI safety, and parametric knowledge editing." />
+                                    <img src="images/lab/Slides.002.jpeg" alt="HOLI Lab’s research topics: value alignment for social intelligence, reasoning for logical intelligence, and interpretability for AI safety and control. Research at Yohan Jo's Lab spans value alignment, user memory and personalization, reasoning for world foundation models and omni-models, interpretability, AI safety, and parametric knowledge editing." draggable="false" />
                                 </div>
                             </div>
                             <div class="slide">
                                 <div class="slide-inner">
-                                    <img src="images/lab/Slides.003.jpeg" alt="HOLI Lab, the Human-Oriented Language Intelligence Lab led by Yohan Jo at Seoul National University’s Graduate School of Data Science." />
+                                    <img src="images/lab/Slides.003.jpeg" alt="HOLI Lab, the Human-Oriented Language Intelligence Lab led by Yohan Jo at Seoul National University’s Graduate School of Data Science." draggable="false" />
                                 </div>
                             </div>
                         </div>
-                        <button class="arrow left" onclick="moveSlide(-1)">&#10094;</button>
-                        <button class="arrow right" onclick="moveSlide(1)">&#10095;</button>
-                        <div class="dots-container" id="dots-container"></div>
+                        <button type="button" class="arrow left" aria-label="Previous slide" aria-controls="research-slides" onclick="moveSlide(-1)">&#10094;</button>
+                        <button type="button" class="arrow right" aria-label="Next slide" aria-controls="research-slides" onclick="moveSlide(1)">&#10095;</button>
+                        <div class="dots-container" id="dots-container" role="group" aria-label="Choose a research topic slide"></div>
                     </div>
                 </div>
 
