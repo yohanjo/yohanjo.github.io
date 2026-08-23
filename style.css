@@ -149,7 +149,6 @@ ol li {
     display: table;
     width: 100%;
     margin-bottom: 20px;
-    padding-top: 10px;
 }
 
 #profile_left_margin {
@@ -184,6 +183,7 @@ ol li {
 }
 
 #photo img {
+	display: block;
 	border-radius: 12px;
 	height: 220px;
 }
