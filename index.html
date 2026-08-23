@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-27XXQLEX67"></script>
@@ -10,9 +11,7 @@
           gtag('config', 'G-27XXQLEX67');
         </script>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="Content-Script-Type" content="text/javascript" />
-        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta charset="utf-8" />
 
         <title>Yohan Jo's Homepage</title>
         <link rel="shortcut icon" href="images/charlie_brown_yellow.png"/>
@@ -21,8 +20,6 @@
         <meta name="description" content="Human-Oriented Language Intelligence Lab (HOLI Lab) develops intelligent agents through value alignment, user memory and personalization, reasoning for world foundation models and omni-models, mechanistic interpretability, AI safety, and parametric knowledge and behavior editing.">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,700' rel='stylesheet' type='text/css'>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', function() {
                 function setupPaperFiltering(sectionId) {
@@ -78,26 +75,6 @@
                 setupPaperFiltering('publications');
                 setupPaperFiltering('preprints');
 
-                // Courses section
-                let coursesUl = document.querySelector('#courses ul');
-                let showMoreCoursesBtn = document.getElementById('showMoreCoursesBtn');
-                let showLessCoursesBtn = document.getElementById('showLessCoursesBtn');
-
-                if(showMoreCoursesBtn) {
-                    showMoreCoursesBtn.addEventListener('click', function() {
-                        coursesUl.classList.add('show-all');
-                        showMoreCoursesBtn.style.display = 'none';
-                        showLessCoursesBtn.style.display = 'inline-block';
-                    });
-                }
-
-                if(showLessCoursesBtn) {
-                    showLessCoursesBtn.addEventListener('click', function() {
-                        coursesUl.classList.remove('show-all');
-                        showLessCoursesBtn.style.display = 'none';
-                        showMoreCoursesBtn.style.display = 'inline-block';
-                    });
-                }
             });
 
             document.addEventListener('DOMContentLoaded', function () {
@@ -152,23 +129,23 @@
     </head>
     <body>
         <div id="wrap">
-            <div id="profile" valign="top">
+            <div id="profile">
                 <div id="profile_left_margin"></div>
                 <div id="short_intro">
                     <h1>Yohan Jo</h1>
                     <p>Assistant Professor</p>
                     <p><a href="https://gsds.snu.ac.kr/">Graduate School of Data Science<br />Seoul National University</a></p>
                     <p>yohan.jo&#64;snu.ac.kr</p>
-                    <p style="margin-top: 20px;"><b>Lab:</b> <img src="images/check.png" class="check_mark" />Research | <a href="lab.html">Members</a></p>
+                    <p style="margin-top: 20px;"><b>Lab:</b> <img src="images/check.png" class="check_mark" alt="check mark" />Research | <a href="lab.html">Members</a></p>
                 </div>
                 <div id="photo">
-                    <img src="images/yohanjo-homepage.png" />
+                    <img src="images/yohanjo-homepage.png" alt="profile photo" />
                 </div>
                 <div id="profile_right_margin"></div>
             </div>
  
             <div id="main">
-                <div id="courses" class="news">
+                <div id="lecture_series" class="news">
                     <h2><a href="https://docs.google.com/document/d/1UnaF-egGw3npYzVnWJc6XUI9FeOuawUylLbetqfM0MY/edit?usp=sharing" target="_blank">&lt;AI, 현장을 만나다&gt; 강연 시리즈</a></h2>
                     <p>다양한 직업 현장에서 AI를 어떻게 활용하고 있을까요? 어떤 AI 역량이 중요할까요? 어떤 AI 기술을 원할까요?<br />이 <a href="https://docs.google.com/document/d/1UnaF-egGw3npYzVnWJc6XUI9FeOuawUylLbetqfM0MY/edit?usp=sharing" target="_blank" style="color: #ee4443;">강연 시리즈</a>에서 생생한 현장의 목소리를 들어봅니다. 구독 및 많은 참여 부탁드립니다.</p>
                 </div>
@@ -385,7 +362,7 @@
                             <p class="paper_authors">Junseo Kim, Jongwook Han, Dongmin Choi, Jongwook Yoon, Eun-Ju Lee, Yohan Jo</p>
                             <p class="paper_venue">[ACL] Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics, 2025</p></li>
 
-                        <li class="paper" data-recent data-topics="social-intelligence"><p class="paper_title">Dialogue Systems for Emotional Support via Value Reinforcement <span class="link"><a href="https://aclanthology.org/2025.acl-long.1395/">Paper</a> <a href="https://drive.google.com/file/d/1rYkWii9ouBKmBRk7SvL-1cyzu2VDMNgt/view?usp=drive_link">Video</a> <a href="https://drive.google.com/file/d/1iWqhAA8c9yUjMDhfd5lvELXKKwkjpwUu/view?usp=drive_link">Poster</a> <a href="https://www.dropbox.com/scl/fi/b151gvrxc2psv3hiqki61/Lecture-26.-Applications-Mental-Health.mp4?rlkey=inqt93nuezg9mzxnfm00lzjhu&dl=0">Lecture</a></span></p>
+                        <li class="paper" data-recent data-topics="social-intelligence"><p class="paper_title">Dialogue Systems for Emotional Support via Value Reinforcement <span class="link"><a href="https://aclanthology.org/2025.acl-long.1395/">Paper</a> <a href="https://drive.google.com/file/d/1rYkWii9ouBKmBRk7SvL-1cyzu2VDMNgt/view?usp=drive_link">Video</a> <a href="https://drive.google.com/file/d/1iWqhAA8c9yUjMDhfd5lvELXKKwkjpwUu/view?usp=drive_link">Poster</a> <a href="https://www.dropbox.com/scl/fi/b151gvrxc2psv3hiqki61/Lecture-26.-Applications-Mental-Health.mp4?rlkey=inqt93nuezg9mzxnfm00lzjhu">Lecture</a></span></p>
                             <p class="paper_authors">Juhee Kim, Chunghu Mok, Jisun Lee, Hyang Sook Kim, Yohan Jo</p>
                             <p class="paper_venue">[ACL] Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics, 2025</p></li>
 
@@ -449,7 +426,7 @@
                             <p class="paper_authors">Jiho Kim, Yeonsu Kwon, Yohan Jo, Edward Choi</p>
                             <p class="paper_venue">[EMNLP-Findings] Findings of the Association for Computational Linguistics: EMNLP, 2023</p></li>
 
-                        <li class="paper" data-topics="social-intelligence"><p class="paper_title">Multi-User MultiWOZ: Task-Oriented Dialogues among Multiple Users <span class="link"><a href="https://aclanthology.org/2023.findings-emnlp.213/">Paper</a> <a href="https://www.dropbox.com/scl/fi/ba62ewk4psyfrr4bk5nbp/EMNLP-2023.mov?rlkey=l549qdunfemf4tqpfn72p11p3&dl=0">Video</a></span></p>
+                        <li class="paper" data-topics="social-intelligence"><p class="paper_title">Multi-User MultiWOZ: Task-Oriented Dialogues among Multiple Users <span class="link"><a href="https://aclanthology.org/2023.findings-emnlp.213/">Paper</a> <a href="https://www.dropbox.com/scl/fi/ba62ewk4psyfrr4bk5nbp/EMNLP-2023.mov?rlkey=l549qdunfemf4tqpfn72p11p3">Video</a></span></p>
                             <p class="paper_authors">Yohan Jo, Xinyan Zhao, Arijit Biswas, Nikoletta Basiou, Vincent Auvray, Nikolaos Malandrakis, Angeliki Metallinou, Alexandros Potamianos</p>
                             <p class="paper_venue">[EMNLP-Findings] Findings of the Association for Computational Linguistics: EMNLP, 2023</p></li>
 
@@ -597,7 +574,7 @@
 
                         -->
                         <li class="paper" data-recent data-topics="social-intelligence"><p class="paper_title">RobotValues: Evaluating Household Robots When Human Values Conflict <span class="link"><a href="https://arxiv.org/pdf/2606.03312">arXiv</a></span></p>
-                            <p class="paper_authors">Jongwook Han, Hyeongjin Kim Yohan Jo</p>
+                            <p class="paper_authors">Jongwook Han, Hyeongjin Kim, Yohan Jo</p>
                             <p class="paper_venue">Pluralistic Alignment Workshop @ ICML26</p></li>
 
                         <li class="paper" data-recent data-topics="safety-control"><p class="paper_title">How Language Models Compute Negation: A Mechanistic Study of Factual Negation <span class="link"><a href=""></a></span></p>
@@ -732,8 +709,6 @@
                 </div>
                 -->
 
-            </div>
-            <div id="footer">
             </div>
         </div>
     </body>

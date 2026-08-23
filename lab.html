@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-27XXQLEX67"></script>
@@ -10,9 +11,7 @@
           gtag('config', 'G-27XXQLEX67');
         </script>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="Content-Script-Type" content="text/javascript" />
-        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta charset="utf-8" />
 
         <title>Lab Members</title>
         <link rel="shortcut icon" href="images/charlie_brown_yellow.png"/>
@@ -20,49 +19,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500,700' rel='stylesheet' type='text/css'>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script>
              document.addEventListener('DOMContentLoaded', function() {
-                // Publications section
                 let yohanBio = document.querySelector('#yohan_bio');
                 let showYohanBioBtn = document.getElementById('showYohanBioBtn');
                 let hideYohanBioBtn = document.getElementById('hideYohanBioBtn');
 
-                 yohanBio.style.display = 'none';
-                hideYohanBioBtn.style.display = 'none';
+                function setYohanBioExpanded(isExpanded) {
+                    yohanBio.style.display = isExpanded ? 'block' : 'none';
+                    showYohanBioBtn.style.display = isExpanded ? 'none' : 'inline-block';
+                    hideYohanBioBtn.style.display = isExpanded ? 'inline-block' : 'none';
+                    showYohanBioBtn.setAttribute('aria-expanded', isExpanded);
+                    hideYohanBioBtn.setAttribute('aria-expanded', isExpanded);
+                }
 
+                setYohanBioExpanded(false);
 
                 showYohanBioBtn.addEventListener('click', function() {
-                    yohanBio.style.display = 'block';
-
-                    // Swap visibility of buttons
-                    showYohanBioBtn.style.display = 'none';
-                    hideYohanBioBtn.style.display = 'inline-block';
+                    setYohanBioExpanded(true);
                 });
 
                 hideYohanBioBtn.addEventListener('click', function() {
-                    yohanBio.style.display = 'none';
-
-                    // Swap visibility of buttons
-                    showYohanBioBtn.style.display = 'inline-block';
-                    hideYohanBioBtn.style.display = 'none';
+                    setYohanBioExpanded(false);
                 });
             });
         </script>
     </head>
     <body>
         <div id="wrap">
-            <div id="profile" valign="top">
+            <div id="profile">
                 <div id="profile_left_margin"></div>
                 <div id="short_intro">
                     <h1>Yohan Jo</h1>
                     <p>Assistant Professor</p>
                     <p><a href="https://gsds.snu.ac.kr/">Graduate School of Data Science<br />Seoul National University</a></p>
                     <p>yohan.jo&#64;snu.ac.kr</p>
-                    <p style="margin-top: 20px;"><b>Lab:</b> <a href="index.html">Research</a> | <img src="images/check.png" class="check_mark" />Members</p>
+                    <p style="margin-top: 20px;"><b>Lab:</b> <a href="index.html">Research</a> | <img src="images/check.png" class="check_mark" alt="check mark" />Members</p>
                 </div>
                 <div id="photo">
-                    <img src="images/yohanjo-homepage.png" />
+                    <img src="images/yohanjo-homepage.png" alt="profile photo" />
                 </div>
                 <div id="profile_right_margin"></div>
             </div>
@@ -78,8 +73,8 @@
                     <li class="student_row">
                         <span class="member_name">Yohan Jo</span>
                         <span class="member_affiliation"> 
-                            <button id="showYohanBioBtn">Show Details</button>
-                            <button id="hideYohanBioBtn">Hide Details</button>
+                            <button id="showYohanBioBtn" type="button" aria-controls="yohan_bio" aria-expanded="false">Show Details</button>
+                            <button id="hideYohanBioBtn" type="button" aria-controls="yohan_bio" aria-expanded="false">Hide Details</button>
                         </span>
                     </li>
                 </ul>
@@ -87,13 +82,13 @@
                     <div id="education" class="yohan_bio_section">
                         <h3>Education</h3>
                         <ul class="nobullet">
-                            <li><b><a href="http://www.cmu.edu">Carnegie Mellon University</a></b></span>
+                            <li><b><a href="http://www.cmu.edu">Carnegie Mellon University</a></b>
                             <ul>
                                 <li>Ph.D. in <a href="http://lti.cs.cmu.edu">Language and Information Technologies</a> (Advisor: <a href="https://www.cs.cmu.edu/~hovy/">Eduard Hovy</a>) <span class="date">(2021)</span></li>
                                 <li>M.S. in <a href="http://lti.cs.cmu.edu">Language Technologies</a> (Advisor: <a href="http://www.cs.cmu.edu/~cprose/">Carolyn P. Rosé</a>)  <span class="date">(2016)</span></li>
                             </ul>
                             </li>
-                            <li><b><a href="http://www.kaist.edu">KAIST</a></b></span>
+                            <li><b><a href="http://www.kaist.edu">KAIST</a></b>
                             <ul>
                                 <li>M.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a> (Advisor: <a href="https://aliceoh9.github.io/">Alice Oh</a>)  <span class="date">(2011)</span></li>
                                 <li>B.S. in <a href="http://cs.kaist.ac.kr">Computer Science</a>  <span class="date">(2009)</span></li>
