@@ -334,6 +334,25 @@ ol li {
   word-wrap: break-word; /* ensures long text wraps nicely */
 }
 
+.member_scholarship {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.member_education {
+  display: flex;
+  align-items: flex-start;
+}
+
+.education_icon {
+  flex: 0 0 auto;
+  margin-right: 0.3em;
+}
+
+.education_details {
+  min-width: 0;
+}
+
 @media screen and (max-width: 767px) {
     .student_list {
         padding: 0 10px;
