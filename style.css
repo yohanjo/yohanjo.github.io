@@ -335,17 +335,20 @@ ol li {
   margin-bottom: 4px;
 }
 
-.member_education {
+.member_education,
+.member_work {
   display: flex;
   align-items: flex-start;
 }
 
-.education_icon {
+.education_icon,
+.work_icon {
   flex: 0 0 auto;
   margin-right: 0.3em;
 }
 
-.education_details {
+.education_details,
+.work_details {
   min-width: 0;
 }
 
@@ -375,29 +378,19 @@ ol li {
     }
 }
 
-.work {
-    margin-right: 10px;
-    font-weight: bold;
-}
-
 #yohan_bio {
-    margin: 10px 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    
+    margin: 0 0 10px;
 }
 
-.yohan_bio_section ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
+#yohan_bio .date {
+    margin-left: 0.25em;
+    font-size: 0.75em;
+    line-height: normal;
+    vertical-align: text-top;
 }
-    
 
-#yohan_bio h3 {
-    margin-top: 0px;
-    font-weight: normal;
+.yohan_bio_section + .yohan_bio_section {
+    margin-top: 10px;
 }
 
 
