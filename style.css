@@ -308,32 +308,28 @@ ol li {
   align-items: start;
 }
 
+.student_row + .student_row {
+  margin-top: 10px;
+}
+
 .student_row:has(.member_name) {
     grid-template-columns: 200px 1fr;
 }
 
-.student_row:has(.alum_name) {
-    grid-template-columns: 300px 1fr;
+.student_row:has(.alum_degree) {
+    grid-template-columns: 200px max-content 1fr;
 }
 
-.member_name,
-.alum_name {
+.member_name {
   font-weight: bold;
   text-align: right;
-}
-
-.member_name a, .alum_name a {
-  filter: grayscale(100%);
-}
-
-.member_name a:hover, .alum_name a:hover {
-  filter: grayscale(0%);
 }
 
 .member_affiliation {
   word-wrap: break-word; /* ensures long text wraps nicely */
 }
 
+.member_internship,
 .member_scholarship {
   display: block;
   margin-bottom: 4px;
@@ -362,12 +358,18 @@ ol li {
         display: block;
     }
 
-    .member_name, .alum_name {
+    .member_name {
         display: block;
         text-align: left;
     }
 
     .member_affiliation {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .alum_degree,
+    .alum_employer {
         display: block;
         margin-left: 20px;
     }
